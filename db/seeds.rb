@@ -66,5 +66,6 @@ Country.all.each do |count|
     ta = Task.new
     ta.name = t
     ta.country = count
+    ta.save
   end
 end
