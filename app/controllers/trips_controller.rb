@@ -9,6 +9,14 @@ class TripsController < ApplicationController
     @trip.user_id = current_user.id
     authorize @trip
     if @trip.save
+      Item.all.each do |item|
+        t = TripItem.new()
+        t.trip = @trip
+        t.item = item
+        t.quantity = (item.ratio * (@trip.end_date - @trip.start_date + 1)).to_i
+        t.done = false
+        t.save
+      end
       redirect_to trip_path(@trip)
     else
       render 'pages/home'
