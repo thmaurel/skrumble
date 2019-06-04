@@ -1,2 +1,12 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<!-- form for trip creation -->
+<div>
+ <%= simple_form_for [@trip] do |f| %>
+   <%= f.association :country, placeholder: "Destination" %>
+   <%= f.input :start_date, placeholder: "Destination" %>
+   <%= f.input :end_date, placeholder: "Destination" %>
+   <%= f.button :submit %>
+   <% end %>
+</div>
