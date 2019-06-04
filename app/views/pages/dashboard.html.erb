@@ -1,40 +1,17 @@
-<div class="container">
-  <h1>Hello <%= current_user.name %></h1>
-  <h2>Check your trips :</h2>
-  <% current_user.trips.each do |trip| %>
-    <p><%= Country.find(trip.country_id).name %></p>
-    <p><%= trip.start_date %></p>
-    <p><%= trip.end_date %></p>
-  <% end %>
-</div>
 <!-- HTML de base pour les trip-cards du trip dashboard -->
 <div>
   <div class="container">
     <div class="text-align-center">
-      <h1>trip-cards</h1>
+      <h1>Hello <%= current_user.name %>!</h1>
+      <h2>Check your trips :</h2>
     </div>
-
     <div class="card-flexbox">
-      <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <h2>My trip to Bali!</h2>
-        <p>12-09-2018 to 24-09-2018</p>
-      </div>
-
-      <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <h2>My trip to Kuala Lumpur!</h2>
-        <p>12-09-2018 to 24-09-2018</p>
-      </div>
-
-      <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <h2>My trip to Nassau!</h2>
-        <p>12-09-2018 to 24-09-2018</p>
-      </div>
-
-      <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <h2>My trip to St-Petersburg!</h2>
-        <p>12-09-2018 to 24-09-2018</p>
-      </div>
+      <% current_user.trips.each do |trip| %>
+        <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <h2>My trip to <%= Country.find(trip.country_id).name %>!</h2>
+          <p><%= trip.start_date %> to <%= trip.end_date %></p>
+        </div>
+      <% end %>
     </div>
   </div>
-
 </div>
