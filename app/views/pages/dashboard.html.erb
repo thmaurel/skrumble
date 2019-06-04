@@ -5,7 +5,7 @@
       <h1>Hello <%= current_user.name %>!</h1>
       <h2>Check your trips :</h2>
     </div>
-    <div class="card-flexbox">
+    <div class="card-trip-flexbox">
       <% current_user.trips.each do |trip| %>
         <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
           <h2>My trip to <%= Country.find(trip.country_id).name %>!</h2>
