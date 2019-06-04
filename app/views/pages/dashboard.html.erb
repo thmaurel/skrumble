@@ -1,17 +1,18 @@
 <!-- HTML de base pour les trip-cards du trip dashboard -->
-<div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= "https://source.unsplash.com/1420x800/?seychelles,landmark" %>);">
   <div class="container">
-    <div class="text-align-center">
-      <h1>Hello <%= current_user.name %>!</h1>
-      <h2>Check your trips :</h2>
-    </div>
-    <div class="card-trip-flexbox">
-      <% current_user.trips.each do |trip| %>
-        <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= "https://source.unsplash.com/280x220/?#{trip.country},landmark" %>)">
-          <h2>My trip to <%= Country.find(trip.country_id).name %>!</h2>
-          <p><%= trip.start_date %> to <%= trip.end_date %></p>
-        </div>
-      <% end %>
-    </div>
+    <h1>Hey <%= current_user.name %></h1>
   </div>
 </div>
+<div class="container">
+  <div class="card-trip-flexbox">
+    <% current_user.trips.each do |trip| %>
+      <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= "https://source.unsplash.com/280x220/?#{trip.country},landmark" %>)">
+        <h2>My trip to <%= Country.find(trip.country_id).name %>!</h2>
+        <p><%= trip.start_date %> to <%= trip.end_date %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
