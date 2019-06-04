@@ -1,0 +1,33 @@
+.trip-show-flexbox {
+  display: flex;
+
+  .trip-list {
+    background-color: white;
+    flex-grow: 1;
+    padding: 16px 24px 8px 24px;
+  }
+
+  h2 {
+    font-size: calc(0.9em + 0.65vw);
+    font-weight: bold;
+  }
+
+  p {
+    margin: 0px
+  }
+
+  .icon {
+    position: fixed top;
+    font-size: calc(1.25em + 2vw);
+    padding: 8px 32px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .item {
+    background-color: $my-grey;
+    font-size: calc(0.8em + 0.4vw);
+    padding: 2px 16px;
+    margin-bottom: 8px;
+  }
+}
