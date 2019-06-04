@@ -27,15 +27,6 @@ end
 
 puts "Countries created"
 
-t = Trip.new
-t.start_date = "Fri, 24 May 2019"
-t.end_date = "Fri, 24 May 2020"
-t.country_id = 1
-t.user_id = 1
-t.save
-
-puts "Trip created"
-
 item = ["t-shirts", "shorts", "chaussettes", "slips", "pulls"]
 
 item.each do |it|
@@ -46,6 +37,7 @@ item.each do |it|
   i.save
 end
 
+
 tasks = ["visa", "passeport", "vaccin fievre jaune", "medicament paludisme"]
 
 Country.all.each do |count|
@@ -53,5 +45,15 @@ Country.all.each do |count|
     ta = Task.new
     ta.name = t
     ta.country = count
+    ta.save
   end
 end
+
+t = Trip.new
+t.start_date = "Fri, 24 May 2019"
+t.end_date = "Fri, 24 May 2020"
+t.country_id = 1
+t.user_id = 1
+t.save
+
+puts "Trip created"
