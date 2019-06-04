@@ -37,7 +37,6 @@ item.each do |it|
   i.save
 end
 
-
 tasks = ["visa", "passeport", "vaccin fievre jaune", "medicament paludisme"]
 
 Country.all.each do |count|
