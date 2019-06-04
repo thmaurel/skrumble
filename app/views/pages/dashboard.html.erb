@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Hello <%= current_user.name %></h1>
+  <h2>Check your trips :</h2>
+  <% current_user.trips.each do |trip| %>
+    <p><%= Country.find(trip.country_id).name %></p>
+    <p><%= trip.start_date %></p>
+    <p><%= trip.end_date %></p>
+  <% end %>
+</div>
