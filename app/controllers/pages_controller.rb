@@ -4,4 +4,7 @@ class PagesController < ApplicationController
   def home
     @trip = Trip.new
   end
+
+  def dashboard
+  end
 end
