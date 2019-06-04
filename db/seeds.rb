@@ -27,15 +27,6 @@ end
 
 puts "Countries created"
 
-t = Trip.new
-t.start_date = "Fri, 24 May 2019"
-t.end_date = "Fri, 24 May 2020"
-t.country_id = 1
-t.user_id = 1
-t.save
-
-puts "Trip created"
-
 item = ["t-shirts", "shorts", "chaussettes", "slips", "pulls"]
 
 item.each do |it|
@@ -45,6 +36,15 @@ item.each do |it|
   i.ratio = 0.3 if it == "pulls"
   i.save
 end
+
+t = Trip.new
+t.start_date = "Fri, 24 May 2019"
+t.end_date = "Fri, 24 May 2020"
+t.country_id = 1
+t.user_id = 1
+t.save
+
+puts "Trip created"
 
 tasks = ["visa", "passeport", "vaccin fievre jaune", "medicament paludisme"]
 
