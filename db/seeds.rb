@@ -17,11 +17,15 @@ u.save
 
 puts "User created"
 
-c = Country.new
-c.name = "France"
-c.save
+ct = ["France", "Germany", "Australia", "USA", "New Zealand", "Brasil", "Canada", "South Africa", "Japan", "Mauricius"]
 
-puts "Country created"
+ct.each do |name|
+  c = Country.new
+  c.name = name
+  c.save
+end
+
+puts "Countries created"
 
 t = Trip.new
 t.start_date = "Fri, 24 May 2019"
