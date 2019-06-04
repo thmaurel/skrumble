@@ -1,7 +1,15 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $white;
 }
+
+a {
+  color: $my-light-blue;
+  font-family: "Raleway";
+  font-style: bold;
+  font-size: 20px;
+}
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;

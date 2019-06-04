@@ -38,12 +38,6 @@
 </div>
 
 
-
-
-
-
-
-
 <!-- HTML de base pour les trip-cards du trip dashboard -->
 <div>
   <div class="container">
@@ -62,15 +56,14 @@
         <p>12-09-2018 to 24-09-2018</p>
       </div>
 
-      <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <h2>My trip to Nassau!</h2>
-        <p>12-09-2018 to 24-09-2018</p>
-      </div>
 
-      <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <h2>My trip to St-Petersburg!</h2>
-        <p>12-09-2018 to 24-09-2018</p>
-      </div>
-    </div>
-  </div>
+<!-- form for trip creation -->
+<div>
+ <%= simple_form_for [@trip] do |f| %>
+   <%= f.association :country, placeholder: "Destination" %>
+   <%= f.input :start_date, placeholder: "Destination" %>
+   <%= f.input :end_date, placeholder: "Destination" %>
+   <%= f.button :submit %>
+   <% end %>
 </div>
+

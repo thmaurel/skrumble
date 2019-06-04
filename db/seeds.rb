@@ -17,11 +17,15 @@ u.save
 
 puts "User created"
 
-c = Country.new
-c.name = "France"
-c.save
+ct = ["France", "Germany", "Australia", "USA", "New Zealand", "Brasil", "Canada", "South Africa", "Japan", "Mauricius"]
 
-puts "Country created"
+ct.each do |name|
+  c = Country.new
+  c.name = name
+  c.save
+end
+
+puts "Countries created"
 
 t = Trip.new
 t.start_date = "Fri, 24 May 2019"
@@ -31,3 +35,23 @@ t.user_id = 1
 t.save
 
 puts "Trip created"
+
+item = ["t-shirts", "shorts", "chaussettes", "slips", "pulls"]
+
+item.each do |it|
+  i = Item.new
+  i.name = it
+  i.ratio = 1
+  i.ratio = 0.3 if it == "pulls"
+  i.save
+end
+
+tasks = ["visa", "passeport", "vaccin fievre jaune", "medicament paludisme"]
+
+Country.all.each do |count|
+  tasks.each do |t|
+    ta = Task.new
+    ta.name = t
+    ta.country = count
+  end
+end
