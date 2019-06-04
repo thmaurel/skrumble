@@ -35,3 +35,23 @@ t.user_id = 1
 t.save
 
 puts "Trip created"
+
+item = ["t-shirts", "shorts", "chaussettes", "slips", "pulls"]
+
+item.each do |it|
+  i = Item.new
+  i.name = it
+  i.ratio = 1
+  i.ratio = 0.3 if it == "pulls"
+  i.save
+end
+
+tasks = ["visa", "passeport", "vaccin fievre jaune", "medicament paludisme"]
+
+Country.all.each do |count|
+  tasks.each do |t|
+    ta = Task.new
+    ta.name = t
+    ta.country = count
+  end
+end
