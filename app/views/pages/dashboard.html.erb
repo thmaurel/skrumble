@@ -9,7 +9,7 @@
   <div class="card-trip-flexbox">
     <% current_user.trips.each do |trip| %>
       <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6)), url(<%= "https://source.unsplash.com/280x220/?#{trip.country},landmark" %>)">
-        <h2>My trip to <%= Country.find(trip.country_id).name %></h2>
+        <h2><%= Country.find(trip.country_id).name %></h2>
         <p><%= trip.start_date %> to <%= trip.end_date %></p>
         <%= link_to "", trip_path(trip), class: 'stretched-link' %>
       </div>
