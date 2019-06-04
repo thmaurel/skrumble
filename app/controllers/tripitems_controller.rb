@@ -1,0 +1,2 @@
+class TripitemsController < ApplicationController
+end
