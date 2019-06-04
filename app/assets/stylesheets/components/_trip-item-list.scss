@@ -1,5 +1,6 @@
 .trip-show-flexbox {
   display: flex;
+  padding-top: 30px;
 
   .trip-list {
     background-color: white;
@@ -7,9 +8,14 @@
     padding: 16px 24px 8px 24px;
   }
 
+  h1 {
+    color: $my-blue;
+  }
+
   h2 {
     font-size: calc(0.9em + 0.65vw);
     font-weight: bold;
+    color: $my-light-blue;
   }
 
   p {
@@ -18,10 +24,11 @@
 
   .icon {
     position: fixed top;
-    font-size: calc(1.25em + 2vw);
+    font-size: calc(1.25em + 8vw);
     padding: 8px 32px;
     text-align: center;
     justify-content: center;
+    color: $my-light-blue;
   }
 
   .item {

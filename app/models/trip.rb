@@ -8,6 +8,7 @@ class Trip < ApplicationRecord
   validates :end_date, presence: true
 
   after_create :create_tripitems
+  after_create :create_todos
 
   private
 
@@ -19,6 +20,18 @@ class Trip < ApplicationRecord
       t.quantity = (item.ratio * (self.end_date - self.start_date + 1)).to_i
       t.done = false
       t.save
+    end
+  end
+
+  def create_todos
+    Task.all.each do |task|
+      if task.country_id == self.country_id
+        todo = Todo.new()
+        todo.trip = self
+        todo.task = task
+        todo.done = false
+        todo.save
+      end
     end
   end
 end

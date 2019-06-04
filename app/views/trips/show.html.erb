@@ -1,4 +1,51 @@
-<div class="container">
-  <h1>Bonjour</h1>
-  <%= Country.find(@trip.country_id).name %>
+
+<div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= 'https://source.unsplash.com/1080x720/?#{trip.country},landmark' %>);">
+    <div class="container">
+      <h1>Hey <%= @current_user.name %></h1>
+      <br>
+      <h2> Let's prepare your trip to <%= Country.find(@trip.country_id).name %> !</h2>
+    </div>
+  </div>
+</div>
+
+<!-- HTML de base pour le bloc des trip-item-cards et todo-cards -->
+
+<div>
+  <div class="container">
+    <div class="text-align-left">
+      <br>
+      <h1>Preparation Overview</h1>
+    </div>
+
+    <div class="trip-show-flexbox">
+      <div class="icon">
+        <i class="fas fa-suitcase"></i>
+      </div>
+
+      <div class="trip-list">
+        <div>
+          <h2>Trip items</h2>
+            <% @trip.trip_items.each do |trip_item| %>
+              <div class="item">
+                <p><%= trip_item.item.name %></p>
+                <p><%= trip_item.quantity %></p>
+                <p><%= trip_item.done %></p>
+              </div>
+            <% end %>
+        </div>
+        <br>
+        <div>
+          <h2>To Do List</h2>
+          <% @trip.todos.each do |todo| %>
+            <div class="item">
+              <p><%= todo.task.name %></p>
+              <p><%= todo.task.description %></p>
+              <p><%= todo.task.process_time %></p>
+              <p><%= todo.done %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
