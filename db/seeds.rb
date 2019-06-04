@@ -37,6 +37,17 @@ item.each do |it|
   i.save
 end
 
+tasks = ["visa", "passeport", "vaccin fievre jaune", "medicament paludisme"]
+
+Country.all.each do |count|
+  tasks.each do |t|
+    ta = Task.new
+    ta.name = t
+    ta.country = count
+    ta.save
+  end
+end
+
 t = Trip.new
 t.start_date = "Fri, 24 May 2019"
 t.end_date = "Fri, 24 May 2020"
@@ -45,13 +56,3 @@ t.user_id = 1
 t.save
 
 puts "Trip created"
-
-tasks = ["visa", "passeport", "vaccin fievre jaune", "medicament paludisme"]
-
-Country.all.each do |count|
-  tasks.each do |t|
-    ta = Task.new
-    ta.name = t
-    ta.country = count
-  end
-end
