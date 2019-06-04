@@ -1,9 +1,10 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container">
-    <h1>Hey <%= @current_user.name %></h1>
-    <br>
-    <h2> Let's prepare your trip to <%= Country.find(@trip.country_id).name %> !</h2>
+<div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= 'https://source.unsplash.com/1080x720/?#{trip.country},landmark' %>);">
+    <div class="container">
+      <h1>Hey <%= @current_user.name %></h1>
+      <br>
+      <h2> Let's prepare your trip to <%= Country.find(@trip.country_id).name %> !</h2>
+    </div>
   </div>
 </div>
 
@@ -12,6 +13,7 @@
 <div>
   <div class="container">
     <div class="text-align-left">
+      <br>
       <h1>Preparation Overview</h1>
     </div>
 
