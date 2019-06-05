@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'dashboard', to: 'pages#dashboard'
   resources :trips, only: [:create, :show]
-  resources :tripitems, only: [:update]
+  resources :tripitems, only: [:update] do
+    patch :mark_as_complete, on: :member
+  end
   resources :todos, only: [:update] do
     patch :mark_as_complete, on: :member
   end
