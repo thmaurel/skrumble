@@ -55,3 +55,12 @@
     }
   }
 }
+
+.list-item .item {
+  cursor: pointer;
+}
+
+.list-item .item.ghost {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
