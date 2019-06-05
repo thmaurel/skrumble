@@ -8,7 +8,7 @@
             <%= f.input :start_date, label: "Departure date", as: :string, required: false, input_html: {class: "datepicker box"} %>
             <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker box"} %>
           </div>
-          <%= f.association :country, placeholder: "Destination", input_html: {class: "datepicker box"} %>
+          <%= f.association :country, placeholder: "Destination", input_html: {class: "box"} %>
           <div class="row justify-content-center">
             <%= f.button :submit, "SKRUMBLE" ,class: "btn btn-danger", id:"bouton" %>
           </div>
