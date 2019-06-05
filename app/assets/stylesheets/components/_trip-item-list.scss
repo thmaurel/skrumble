@@ -1,0 +1,57 @@
+.trip-show-flexbox {
+  display: flex;
+  padding-top: 30px;
+
+  .trip-list {
+    background-color: white;
+    flex-grow: 1;
+    padding: 16px 24px 8px 24px;
+  }
+
+  h1 {
+    color: $my-blue;
+  }
+
+  h2 {
+    font-size: calc(0.9em + 0.65vw);
+    font-weight: normal;
+    color: $my-light-blue;
+  }
+
+  p {
+    margin: 0px;
+    font-weight: lighter;
+  }
+
+  .icon {
+    position: fixed top;
+    font-size: calc(1.25em + 8vw);
+    padding: 8px 32px;
+    text-align: center;
+    justify-content: center;
+    color: $my-light-blue;
+    height: 100vh;
+  }
+
+  .icon .progression-bar {
+    font-size: calc(0.15em + 0.15vw);
+  }
+
+  .icon .drop-zone {
+    position: sticky;
+    top: 250px;
+  }
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    background-color: $my-grey;
+    font-size: calc(0.8em + 0.4vw);
+    padding: 2px 16px;
+    margin-bottom: 8px;
+
+    p:first-child {
+      width: 70%;
+    }
+  }
+}
