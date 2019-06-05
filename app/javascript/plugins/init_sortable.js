@@ -5,22 +5,27 @@ const initSortable = () => {
   list.forEach ( function(element) {
     Sortable.create(element, {
     ghostClass: "ghost",
+    group: "valise",
     animation: 150,
-    // onEnd: (event) => {
-    //   alert(`${event.oldIndex} moved to ${event.newIndex}`);
-    // }
+    onEnd: (event) => {
+      if (event.to === valise) { markAsDone() }
+      alert(`${event.oldIndex} moved to ${event.newIndex}`);
+    },
     });
   });
-  const sortDone = document.querySelector('#sortDone')
-    Sortable.create(sortDone, {
-      group: "sorting",
-      sort: true
-    });
-  const sortUndone = document.querySelector('#sortUndone')
-    Sortable.create(sortUndone, {
-      group: "sorting",
-      sort: false
-    });
+  const valise = document.querySelector('.drop-zone');
+  Sortable.create(valise, {
+    group: "valise",
+    sort: false,
+  });
 };
+
+// const markAsDone = () => {
+//   $.ajax({
+//     type: 'PATCH',
+//     url: '/todos/:id/markAsDone'
+//     data:
+//   })
+// };
 
 export { initSortable };
