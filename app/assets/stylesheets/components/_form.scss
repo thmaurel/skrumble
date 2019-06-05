@@ -3,11 +3,21 @@
 }
 
 .calendar{
-  width: 420px;
+  width: 500px;
+  color: $light-gray;
 }
 .subcont {
   height: 100vh;
 }
 .box {
   box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.full-page {
+  height: 100vh;
+}
+
+.form-sign-up {
+  width: 500px;
+  color: $light-gray;
 }
