@@ -1,4 +1,4 @@
 import "bootstrap";
-import initFlatpickr from "../plugins/flatpickr"
+import initFlatpickr from "../plugins/flatpickr";
 
-initFlatpickr()
+initFlatpickr();
