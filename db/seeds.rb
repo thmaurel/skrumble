@@ -59,7 +59,7 @@ t = Trip.new
 t.start_date = "Fri, 24 May 2019"
 t.end_date = "Fri, 31 May 2019"
 t.country_id = 1
-t.user_id = 1
+t.user = u
 t.save
 
 puts "Trip created"
