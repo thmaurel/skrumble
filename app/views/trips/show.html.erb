@@ -1,9 +1,17 @@
 
 <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'dubrovnik.jpg' %>);">
     <div class="container">
-      <h1>Hey <%= @current_user.name %></h1>
-      <br>
-      <h2> Let's Skrumble your trip to <%= Country.find(@trip.country_id).name %> !</h2>
+      <div class="d-flex justify-content-between">
+        <div>
+          <h1>Hey <%= @current_user.name %></h1>
+          <br>
+          <h2> Let's Skrumble your trip to <%= Country.find(@trip.country_id).name %> !</h2>
+        </div>
+
+        <div>
+          <%= link_to 'Share my trip', share_new_path(trip) %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

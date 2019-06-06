@@ -17,6 +17,15 @@ class TripsController < ApplicationController
     end
   end
 
+  def share_new
+  end
+
+  def share_create
+    @shared_trip = Trip.find(params[:id])
+    @new_trip = @shared_trip.dup
+    @new_trip.user = current_user
+  end
+
   private
 
   def trip_params
