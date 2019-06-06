@@ -1,7 +1,7 @@
 
 <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'dubrovnik.jpg' %>);">
     <div class="container">
-      <h1>Hey <%= @current_user.name %></h1>
+      <h1>Hey <%= @current_user.first_name %></h1>
       <br>
       <h2> Let's Skrumble your trip to <%= Country.find(@trip.country_id).name %> !</h2>
     </div>
@@ -91,3 +91,14 @@
     </div>
   </div>
 </div>
+
+<% b = 0 %>
+<% u = current_user.trips.find_by(params[:trip_id]).trip_items.count %>
+<% current_user.trips.find_by(params[:trip_id]).trip_items.each do |l| %>
+  <% if l.done %>
+    <% b += 1 %>
+  <% end %>
+<% end %>
+<% if b == u %>
+  <h1>Good job ✅</h1>
+<% end %>
