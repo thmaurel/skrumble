@@ -6,8 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Task.destroy_all
+Todo.destroy_all
+TripItem.destroy_all
+Trip.destroy_all
 Item.destroy_all
+Task.destroy_all
 Country.destroy_all
 User.destroy_all
 
@@ -22,11 +25,9 @@ u.save
 
 puts "User created"
 
-ct = ["France", "Germany", "Australia", "USA", "New Zealand", "Brasil", "Canada", "South Africa", "Japan", "Mauricius"]
-
-ct.each do |name|
+CSV.foreach('countries.csv') do |row|
   c = Country.new
-  c.name = name
+  c.name = row[0]
   c.save
 end
 
@@ -55,9 +56,39 @@ end
 
 t = Trip.new
 t.start_date = "Fri, 24 May 2019"
-t.end_date = "Fri, 24 May 2020"
+t.end_date = "Fri, 31 May 2019"
 t.country_id = 1
 t.user_id = 1
 t.save
 
 puts "Trip created"
+
+
+# html = open("https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/").read
+# html_doc = Nokogiri::HTML(html)
+# html_doc.search('#recherche_pays option').each do |ct|
+#   puts '"' + ct.text + '", "' + ct.values[0] + '"'
+#   c = Country.new
+#   c.name = ct.text
+#   c.save
+# end
+
+# CSV.foreach('countries.csv') do |row|
+#   name = row[0]
+#   link = "https://www.diplomatie.gouv.fr/" + row[1]
+#   fj = 0
+#   html = open(link).read
+#   html_doc = Nokogiri::HTML(html)
+#   html_doc.search('#sante p').each do |text|
+#     if (text.text.include? "fièvre jaune")
+#       fj = 1
+#     end
+#   end
+#   if fj == 1
+#     puts name + " : Fièvre Jaune todo"
+#   else
+#     puts name + " : Fièvre Jaune not todo"
+#   end
+# end
+
+
