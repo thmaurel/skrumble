@@ -1,10 +1,12 @@
-
-<div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @trip.country.photo %>');">
-    <div class="container">
-      <h1>Hey <%= @current_user.name %></h1>
-      <br>
-      <h2> Let's Skrumble your trip to <%= Country.find(@trip.country_id).name %> !</h2>
-    </div>
+<% if @trip.country.photo.url.nil? %>
+  <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'dubrovnik.jpg' %>);">
+<% else %>
+  <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6)), url('<%= cl_image_path @trip.country.photo, crop: :fill %>')">
+<% end %>
+  <div class="container">
+    <h1>Hey <%= @current_user.name %></h1>
+    <br>
+    <h2> Let's Skrumble your trip to <%= Country.find(@trip.country_id).name %> !</h2>
   </div>
 </div>
 
@@ -30,14 +32,14 @@
       <div class="trip-list">
         <div>
           <h2><i class="fas fa-scroll"></i> The essentials</h2>
-            <div id="sortUndone" class="trip-list-group">
+            <div id="sortUndone" class="list-group">
               <% @trip.trip_items.each do |trip_item| %>
                 <% if trip_item.done == false %>
-                  <div class="item jsitem" data-id-trip="<%= trip_item.id %>">
+                  <div class="item">
                     <p><%= trip_item.item.name %></p>
                     <p><%= trip_item.quantity %></p>
-                    <p class="status"><%= trip_item.done? ? "✅" : "‼️" %></p>
-                    <%= link_to "done", mark_as_complete_tripitem_path(trip_item), method: :patch, class: 'link' %>
+                    <p><%= trip_item.done? ? "✅" : "‼️" %></p>
+                    <%= link_to "done", mark_as_complete_tripitem_path(trip_item), method: :patch %>
                   </div>
                 <% end %>
               <% end %>
@@ -46,15 +48,15 @@
         <br>
         <div>
           <h2><i class="fas fa-passport"></i> The important</h2>
-          <div id="sortUndone" class="todo-list-group">
+          <div id="sortUndone" class="list-group">
             <% @trip.todos.each do |todo| %>
               <% if todo.done == false %>
-                <div class="item jstodo" data-id-todo="<%= todo.id %>">
+                <div class="item" data-id=<%= todo.id %>>
                   <p><%= todo.task.name %></p>
                   <p><%= todo.task.description %></p>
                   <p><%= todo.task.process_time %></p>
-                  <p class="status"><%= todo.done? ? "✅" : "‼️" %></p>
-                  <%= link_to "done", mark_as_complete_todo_path(todo), method: :patch, class: 'link' %>
+                  <p><%= todo.done? ? "✅" : "‼️" %></p>
+                  <%= link_to "done", mark_as_complete_todo_path(todo), method: :patch %>
                 </div>
               <% end %>
             <% end %>
@@ -64,14 +66,14 @@
         <hr>
         <div>
           <h2><i class="fas fa-running"></i> Good to go</h2>
-          <div id="sortDone" class="done-list-group">
+          <div id="sortDone" class="list-group">
               <% @trip.todos.each do |todo| %>
                 <% if todo.done? %>
                   <div class="item">
                     <p><%= todo.task.name %></p>
                     <p><%= todo.task.description %></p>
                     <p><%= todo.task.process_time %></p>
-                    <p>✅</p>
+                    <p><%= todo.done? ? "✅" : "‼️" %></p>
                   </div>
                 <% end %>
               <% end %>
