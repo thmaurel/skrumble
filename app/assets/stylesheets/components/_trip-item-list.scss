@@ -56,9 +56,19 @@
   }
 }
 
-.list-item .item {
-  cursor: pointer;
+.jsitem {
+  &:hover {
+    cursor: grab;
+  }
 }
+
+.jstodo  {
+  &:hover {
+    cursor: grab;
+  }
+}
+
+
 
 .list-item .item.ghost {
   filter: grayscale(1);
