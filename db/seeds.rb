@@ -28,6 +28,7 @@ puts "User created"
 CSV.foreach('countries.csv') do |row|
   c = Country.new
   c.name = row[0]
+  c.remote_photo_url = row[1] if row.size == 2
   c.save
 end
 
