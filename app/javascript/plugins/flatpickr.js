@@ -9,4 +9,4 @@ const initFlatpickr = () => {
   }
 }
 
-export default initFlatpickr;
+export default initFlatpickr();
