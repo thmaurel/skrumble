@@ -6,6 +6,8 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
+    country = Country.find_by(name: params[:country])
+    @trip.country = country
     @trip.user_id = current_user.id
     authorize @trip
     if @trip.save
@@ -18,6 +20,6 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:country_id, :start_date, :end_date)
+    params.require(:trip).permit(:start_date, :end_date)
   end
 end
