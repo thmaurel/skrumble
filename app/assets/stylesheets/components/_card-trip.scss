@@ -1,20 +1,53 @@
 .card-trip {
-  background-size: cover;
-  background-position: center;
   height: 220px;
   width:280px;
+  margin: 16px 0px;
+  border-radius: 5px;
+  perspective: 1000px;
+}
+
+.card-trip-flexbox {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 16px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
   align-items: center;
-  text-align: center;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 2px 2px 15px rgba(0,0,0,0.8);
-  margin: 16px 0px;
   color: white;
-  position: relative;
+}
 
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.card-trip:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 5px;
+}
+
+.flip-card-front {
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
   h2 {
     font-size: 24px;
     font-weight: bold;
@@ -26,9 +59,29 @@
   }
 }
 
-.card-trip-flexbox {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-top: 16px;
+/* Style the front side (fallback if image is missing) */
+// .flip-card-front {
+//   background-color: #bbb;
+//   color: black;
+// }
+
+/* Style the back side */
+.flip-card-back {
+  // background-color: dodgerblue;
+  color: $my-light-blue;
+  transform: rotateY(180deg);
+  background-position: center;
+  background-size: cover;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  h2 {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
 }
