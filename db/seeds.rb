@@ -34,15 +34,18 @@ end
 
 puts "Countries created"
 
-item = ["Pullovers", "Shorts", "Socks", "T-shirts", "Underwears"]
+item = ["Pullovers", "Shorts", "Socks", "T-shirts", "Underwears", "Toilet bag"]
 
 item.each do |it|
   i = Item.new
   i.name = it
   i.ratio = 1
   i.ratio = 0.3 if it == "Pullovers"
+  i.ratio = 0 if it == "Toilet bag"
   i.save
 end
+
+puts "Items created"
 
 # tasks = ["visa", "passeport", "vaccin fievre jaune", "medicament paludisme"]
 
@@ -52,13 +55,60 @@ ta.name = "Passport"
 ta.country = taco
 ta.save
 ta = Task.new
-ta.name = "Rabbies shot"
+ta.name = "Visa"
+ta.country = taco
+ta.save
+ta = Task.new
+ta.name = "Rabies vaccine"
+ta.country = taco
+ta.save
+
+taco = Country.find_by(name: "Indonesia")
+ta = Task.new
+ta.name = "Passport"
+ta.country = taco
+ta.save
+ta.name = "Dengue vaccine"
+ta.country = taco
+ta.save
+ta = Task.new
+ta.name = "Typhoid vaccine"
 ta.country = taco
 ta.save
 ta = Task.new
 ta.name = "Visa"
 ta.country = taco
 ta.save
+
+taco = Country.find_by(name: "New Zealand")
+ta = Task.new
+ta.name = "Passport"
+ta.country = taco
+ta.save
+ta = Task.new
+ta.name = "Visa"
+ta.country = taco
+ta.save
+
+taco = Country.find_by(name: "Namibia")
+ta = Task.new
+ta.name = "Passport"
+ta.country = taco
+ta.save
+ta = Task.new
+ta.name = "Visa"
+ta.country = taco
+ta.save
+ta = Task.new
+ta.name = "Yellow fever vaccine"
+ta.country = taco
+ta.save
+ta = Task.new
+ta.name = "Typhoid vaccine"
+ta.country = taco
+ta.save
+
+puts "Tasks created"
 
 # Country.all.each do |count|
 #   tasks.each do |t|
@@ -68,15 +118,6 @@ ta.save
 #     ta.save
 #   end
 # end
-
-t = Trip.new
-t.start_date = "Fri, 24 May 2019"
-t.end_date = "Fri, 31 May 2019"
-t.country_id = 1
-t.user = u
-t.save
-
-puts "Trip created"
 
 
 # html = open("https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/").read
