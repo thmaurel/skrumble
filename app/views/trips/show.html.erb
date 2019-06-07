@@ -1,3 +1,9 @@
+<div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'dubrovnik.jpg' %>);">
+    <div class="container">
+      <h1>Hey <%= @current_user.first_name %></h1>
+      <br>
+      <h2> Let's Skrumble your trip to <%= Country.find(@trip.country_id).name %> !</h2>
+    </div>
 <% if @trip.country.photo.url.nil? %>
   <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'dubrovnik.jpg' %>);">
 <% else %>
@@ -7,6 +13,7 @@
     <h1>Hey <%= @current_user.name %></h1>
     <br>
     <h2> Let's Skrumble your trip to <%= Country.find(@trip.country_id).name %> !</h2>
+
   </div>
 </div>
 
