@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   # validates :surname, presence: true
-  # validates :email, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
 
   def self.find_for_facebook_oauth(auth, i)
     user_params = auth.slice("provider", "uid")
@@ -34,13 +34,14 @@ class User < ApplicationRecord
 
     return user
   end
+
   def facebook
     @facebook ||= Koala::Facebook::API.new(oauth_token)
     block_given? ? yield(@facebook) : @facebook
-  rescue Koala::Facebook::APIError => e
+    rescue Koala::Facebook::APIError => e
     logger.info e.to_s
     nil
-end
+  end
 
   def api_call
     query = "Me?fields=picture.type(large),location,events.fields(name,location,end_time,privacy,updated_time,description,rsvp_status,venue,start_time,id,ticket_uri,picture.type(large),cover,owner,admins.fields(picture.type(large),name,location),attending.fields(picture.type(large),name,rsvp_status,first_name,last_name,email,location),maybe.fields(rsvp_status,picture.type(large),name,first_name,last_name,email,age_range,location)),friends.fields(cover,id,gender,location,username,email,first_name,last_name,picture.type(large))"

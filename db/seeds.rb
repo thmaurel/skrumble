@@ -12,9 +12,9 @@ Country.destroy_all
 User.destroy_all
 
 u = User.new
-u.name = "Bob"
-u.surname = "Bob"
-u.username = "Bob"
+u.first_name = "Bob"
+u.last_name = "Bob"
+#u.username = "Bob"
 u.email = "abc@gmail.com"
 u.password = "abc123"
 u.password_confirmation = "abc123"
