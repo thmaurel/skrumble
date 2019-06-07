@@ -51,8 +51,10 @@ const markAsDone = (id) => {
   })
   // .then(response => response.json())
   .then((data) => {
-    let jsitem = document.querySelector(`.jsitem[data-id-trip='${id}'] .status`);
-    jsitem.innerText = "✅"
+    let jsItemStatus = document.querySelector(`.jsitem[data-id-trip='${id}'] .status`);
+    jsItemStatus.innerHTML = '<i class="fas fa-check"></i>'
+    let jsItemQuanity = document.querySelector(`.jsitem[data-id-trip='${id}'] .quantity`);
+    jsItemQuanity.innerText = ""
     let link = document.querySelector(`.jsitem[data-id-trip='${id}'] .link`);
     link.outerHTML = ""
   });
@@ -65,7 +67,7 @@ const markAsComplete = (id) => {
   // .then(response => response.json())
   .then((data) => {
     let jstodo = document.querySelector(`.jstodo[data-id-todo='${id}'] .status`);
-    jstodo.innerText = "✅"
+    jstodo.innerHTML = '<i class="fas fa-check"></i>'
     let link = document.querySelector(`.jstodo[data-id-todo='${id}'] .link`);
     link.outerHTML = ""
   });

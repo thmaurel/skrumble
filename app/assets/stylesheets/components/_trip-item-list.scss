@@ -27,19 +27,21 @@
     position: fixed top;
     font-size: calc(1.25em + 8vw);
     padding: 8px 32px;
-    text-align: center;
+    text-align: left;
     justify-content: center;
     color: $my-light-blue;
     height: 100vh;
   }
 
   .icon .progression-bar {
-    font-size: calc(0.15em + 0.15vw);
+    font-size: 15px;
   }
 
   .icon .drop-zone {
     position: sticky;
-    top: 250px;
+    top: 100px;
+    background-color: white;
+    padding: 16px 24px 8px 24px;
   }
 
   .item {
@@ -69,8 +71,19 @@
 }
 
 
-
 .list-item .item.ghost {
   filter: grayscale(1);
   opacity: 0.5;
 }
+
+.go-skrumble-bar {
+  display: flex;
+  padding: 10px;
+  margin-top: 15px;
+  justify-content: space-between;
+}
+
+.suitcase {
+  text-align: center;
+}
+
