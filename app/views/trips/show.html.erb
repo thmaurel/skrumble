@@ -37,7 +37,7 @@
                         <p><%= todo.task.name %></p>
                         <!-- <p><%= todo.task.description %></p> -->
                         <!-- <p><%= todo.task.process_time %></p> -->
-                        <p><i class="fas fa-check"></i></p>
+                        <p><i class="far fa-thumbs-up"></i></p>
                       </div>
                     <% end %>
                   <% end %>
@@ -46,7 +46,7 @@
                       <div class="item">
                         <p><%= trip_item.item.name %></p>
                         <!-- <p><%= trip_item.quantity %></p> -->
-                        <p><i class="fas fa-check"></i></p>
+                        <p><i class="far fa-thumbs-up"></i></p>
                       </div>
                     <% end %>
                   <% end %>
@@ -65,8 +65,9 @@
                   <div class="item jsitem" data-id-trip="<%= trip_item.id %>">
                     <p><%= trip_item.item.name %></p>
                     <p class="quantity"><%= trip_item.quantity %></p>
-                    <p class="status"><%= trip_item.done? ? "✅" : "❗️" %></p>
-                    <%= link_to "done", mark_as_complete_tripitem_path(trip_item), method: :patch, class: 'link' %>
+                    <% if trip_item.done == false %>
+                      <p class="status"><i class="far fa-thumbs-down"></i></p>
+                    <% end %>
                   </div>
                 <% end %>
               <% end %>
@@ -82,8 +83,9 @@
                   <p><%= todo.task.name %></p>
                   <p><%= todo.task.description %></p>
                   <p><%= todo.task.process_time %></p>
-                  <p class="status"><%= todo.done? ? "✅" : "❗️" %></p>
-                  <%= link_to "done", mark_as_complete_todo_path(todo), method: :patch, class: 'link' %>
+                  <% if todo.done == false %>
+                    <p class="status"><i class="far fa-thumbs-down"></i></p>
+                  <% end %>
                 </div>
               <% end %>
             <% end %>
