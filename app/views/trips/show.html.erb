@@ -3,30 +3,63 @@
 <% else %>
 <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6)), url('<%= cl_image_path @trip.country.photo, crop: :fill %>')">
 <% end %>
-  <div class="container">
-    <h1>Hey <%= @current_user.first_name %></h1>
-    <br>
-    <h2> Let's Skrumble your trip to <%= Country.find(@trip.country_id).name %> !</h2>
+    <div class="container">
+      <div class="d-flex justify-content-between">
+        <div>
+          <h1>Hey <%= @current_user.name %></h1>
+          <br>
+          <h2> Let's Skrumble your trip to <%= Country.find(@trip.country_id).name %> !</h2>
+        </div>
 
+        <div>
+          <%= link_to "Share my trip", share_new_trip_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
 <!-- HTML de base pour le bloc des trip-item-cards et todo-cards -->
 
 <div>
   <div class="container">
-    <div class="text-align-left">
-      <br>
-      <h2>Go Skrumble Go</h2>
+    <div class="go-skrumble-bar">
+      <div class="text-align-left">
+        <h2>Go Skrumble Go</h2>
+      </div>
+        <%= link_to '<i class="fas fa-home"></i> To Dashboard'.html_safe, dashboard_path, class: "nav-link" %>
     </div>
-
     <div class="trip-show-flexbox">
       <div class="icon">
         <div class="drop-zone">
-          <i class="fas fa-suitcase"></i>
+          <div class="suitcase">
+            <i class="fas fa-suitcase"></i>
+          </div>
           <div class="progression-bar">
-            <p>Progression Status</p>
-        </div>
+            <div>
+              <h2><i class="far fa-check-circle"></i> Good to go</h2>
+              <div id="sortDone" class="done-list-group">
+                  <% @trip.todos.each do |todo| %>
+                    <% if todo.done? %>
+                      <div class="item">
+                        <p><%= todo.task.name %></p>
+                        <!-- <p><%= todo.task.description %></p> -->
+                        <!-- <p><%= todo.task.process_time %></p> -->
+                        <p><i class="fas fa-check"></i></p>
+                      </div>
+                    <% end %>
+                  <% end %>
+                  <% @trip.trip_items.each do |trip_item| %>
+                    <% if trip_item.done? %>
+                      <div class="item">
+                        <p><%= trip_item.item.name %></p>
+                        <!-- <p><%= trip_item.quantity %></p> -->
+                        <p><i class="fas fa-check"></i></p>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
 
@@ -38,8 +71,8 @@
                 <% if trip_item.done == false %>
                   <div class="item jsitem" data-id-trip="<%= trip_item.id %>">
                     <p><%= trip_item.item.name %></p>
-                    <p><%= trip_item.quantity %></p>
-                    <p class="status"><%= trip_item.done? ? "✅" : "‼️" %></p>
+                    <p class="quantity"><%= trip_item.quantity %></p>
+                    <p class="status"><%= trip_item.done? ? "✅" : "❗️" %></p>
                     <%= link_to "done", mark_as_complete_tripitem_path(trip_item), method: :patch, class: 'link' %>
                   </div>
                 <% end %>
@@ -56,38 +89,11 @@
                   <p><%= todo.task.name %></p>
                   <p><%= todo.task.description %></p>
                   <p><%= todo.task.process_time %></p>
-                  <p class="status"><%= todo.done? ? "✅" : "‼️" %></p>
+                  <p class="status"><%= todo.done? ? "✅" : "❗️" %></p>
                   <%= link_to "done", mark_as_complete_todo_path(todo), method: :patch, class: 'link' %>
                 </div>
               <% end %>
             <% end %>
-          </div>
-        </div>
-        <br>
-        <hr>
-        <div>
-          <h2><i class="fas fa-running"></i> Good to go</h2>
-          <div id="sortDone" class="done-list-group">
-              <% @trip.todos.each do |todo| %>
-                <% if todo.done? %>
-                  <div class="item">
-                    <p><%= todo.task.name %></p>
-                    <p><%= todo.task.description %></p>
-                    <p><%= todo.task.process_time %></p>
-                    <p>✅</p>
-                  </div>
-                <% end %>
-              <% end %>
-              <% @trip.trip_items.each do |trip_item| %>
-                <% if trip_item.done? %>
-                  <div class="item">
-                    <p><%= trip_item.item.name %></p>
-                    <p><%= trip_item.quantity %></p>
-                    <p><%= trip_item.done? ? "✅" : "‼️" %></p>
-                  </div>
-                <% end %>
-              <% end %>
-            </div>
           </div>
         </div>
       </div>
