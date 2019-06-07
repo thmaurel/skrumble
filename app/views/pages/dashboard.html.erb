@@ -2,13 +2,21 @@
 
 <div class="dashboard-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= "https://source.unsplash.com/1420x800/?seychelles" %>);">
   <div class="container">
-    <h1>Welcome in your dashboard, <%= current_user.name %></h1>
+    <h1>Welcome in your dashboard, <%= current_user.first_name %></h1>
   </div>
 </div>
 <div class="container">
   <div class="card-trip-flexbox">
     <% current_user.trips.each do |trip| %>
+<<<<<<< share-button
       <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6)), url(<%= "https://source.unsplash.com/280x220/?#{trip.country.name},landmark" %>)">
+=======
+      <% if trip.country.photo.url.nil? %>
+        <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'dubrovnik.jpg' %>);">
+      <% else %>
+        <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6)), url(<%= cl_image_path trip.country.photo, crop: :fill %>)">
+      <% end %>
+>>>>>>> master
         <h2><%= Country.find(trip.country_id).name %></h2>
         <p><%= trip.start_date %> to <%= trip.end_date %></p>
         <%= link_to "", trip_path(trip), class: 'stretched-link' %>

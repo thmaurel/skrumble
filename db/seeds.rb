@@ -15,9 +15,9 @@ Country.destroy_all
 User.destroy_all
 
 u = User.new
-u.name = "Bob"
-u.surname = "Bob"
-u.username = "Bob"
+u.first_name = "Bob"
+u.last_name = "Bob"
+#u.username = "Bob"
 u.email = "abc@gmail.com"
 u.password = "abc123"
 u.password_confirmation = "abc123"
@@ -28,6 +28,7 @@ puts "User created"
 CSV.foreach('countries.csv') do |row|
   c = Country.new
   c.name = row[0]
+  c.remote_photo_url = row[1] if row.size == 2
   c.save
 end
 
@@ -58,7 +59,7 @@ t = Trip.new
 t.start_date = "Fri, 24 May 2019"
 t.end_date = "Fri, 31 May 2019"
 t.country_id = 1
-t.user_id = 1
+t.user = u
 t.save
 
 puts "Trip created"
