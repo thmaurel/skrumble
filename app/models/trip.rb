@@ -17,7 +17,7 @@ class Trip < ApplicationRecord
       t = TripItem.new()
       t.trip = self
       t.item = item
-      t.quantity = (item.ratio * (self.end_date - self.start_date + 1)).to_i
+      t.quantity = (item.ratio * (self.end_date - self.start_date + 1)).to_i + 1
       t.done = false
       t.save
     end
