@@ -3,13 +3,20 @@
 <% else %>
   <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6)), url('<%= cl_image_path @trip.country.photo, crop: :fill %>')">
 <% end %>
-  <div class="container">
-    <h1>Hey <%= @current_user.first_name %></h1>
-    <br>
-    <h2> Let's Skrumble your trip to <%= Country.find(@trip.country_id).name %> !</h2>
+    <div class="container">
+      <div class="d-flex justify-content-between">
+        <div>
+          <h1>Hey <%= @current_user.name %></h1>
+          <br>
+          <h2> Let's Skrumble your trip to <%= Country.find(@trip.country_id).name %> !</h2>
+        </div>
 
+        <div>
+          <%= link_to "Share my trip", share_new_trip_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
 <!-- HTML de base pour le bloc des trip-item-cards et todo-cards -->
 
