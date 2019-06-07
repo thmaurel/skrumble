@@ -15,8 +15,8 @@ Country.destroy_all
 User.destroy_all
 
 u = User.new
-u.first_name = "Bob"
-u.last_name = "Bob"
+u.first_name = "Emeric"
+u.last_name = "Le Bail"
 #u.username = "Bob"
 u.email = "abc@gmail.com"
 u.password = "abc123"
@@ -34,26 +34,40 @@ end
 
 puts "Countries created"
 
-item = ["t-shirts", "shorts", "chaussettes", "slips", "pulls"]
+item = ["Pullovers", "Shorts", "Socks", "T-shirts", "Underwears"]
 
 item.each do |it|
   i = Item.new
   i.name = it
   i.ratio = 1
-  i.ratio = 0.3 if it == "pulls"
+  i.ratio = 0.3 if it == "Pullovers"
   i.save
 end
 
-tasks = ["visa", "passeport", "vaccin fievre jaune", "medicament paludisme"]
+# tasks = ["visa", "passeport", "vaccin fievre jaune", "medicament paludisme"]
 
-Country.all.each do |count|
-  tasks.each do |t|
-    ta = Task.new
-    ta.name = t
-    ta.country = count
-    ta.save
-  end
-end
+taco = Country.find_by(name: "North Korea")
+ta = Task.new
+ta.name = "Passport"
+ta.country = taco
+ta.save
+ta = Task.new
+ta.name = "Rabbies shot"
+ta.country = taco
+ta.save
+ta = Task.new
+ta.name = "Visa"
+ta.country = taco
+ta.save
+
+# Country.all.each do |count|
+#   tasks.each do |t|
+#     ta = Task.new
+#     ta.name = t
+#     ta.country = count
+#     ta.save
+#   end
+# end
 
 t = Trip.new
 t.start_date = "Fri, 24 May 2019"
