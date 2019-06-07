@@ -18,12 +18,22 @@ class TripsController < ApplicationController
   end
 
   def share_new
+    @shared_trip = Trip.new
+    @users = User.where.not(id: current_user.id)
+    authorize @shared_trip
   end
 
   def share_create
     @shared_trip = Trip.find(params[:id])
+    @new_user = User.find(params[:trip][:user])
     @new_trip = @shared_trip.dup
-    @new_trip.user = current_user
+    @new_trip.user = @new_user
+    authorize @new_trip
+    if @new_trip.save
+      redirect_to trip_path(@shared_trip)
+    else
+      render :share_new
+    end
   end
 
   private

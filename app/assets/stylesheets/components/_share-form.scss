@@ -1,0 +1,19 @@
+.share-form {
+  background-color: white;
+  margin-top: calc(1em + 2vw);
+  padding: calc(0.3em + 0.5vw) calc(0.5em + 1.5vw) calc(0.5em + 1vw);
+  width: calc(10em + 30vw);
+  border-radius: 3px;
+
+  div.input {
+    margin-bottom: 16px;
+    clear: both;
+  }
+
+  label {
+    float: left;
+    width: 100px;
+    margin: 16px 10px;
+  }
+}
+

@@ -12,4 +12,12 @@ class TripPolicy < ApplicationPolicy
   def create?
     return true
   end
+
+  def share_new?
+    share_create?
+  end
+
+  def share_create?
+    true
+  end
 end
