@@ -3,7 +3,6 @@
 }
 
 .calendar{
-  width: 500px;
   color: $light-gray;
 }
 .subcont {
@@ -57,6 +56,11 @@
 .lo {
   width: 400px;
 }
+
+#trip_start_date, #trip_end_date {
+  width: 190px;
+}
+
 #bouton {
   font-size: 14px;
 }
