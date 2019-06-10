@@ -1,7 +1,8 @@
 import { Spinner } from 'spin.js';
 
 const initSpin = () => {
-  const title = document.getElementById('home-title')
+  const title = document.getElementById('home-title');
+  const lasttitle = document.getElementById('last-title');
   const form = document.getElementById('new_trip');
   const toucan = document.getElementById('toucan');
   if (form) {
@@ -9,6 +10,7 @@ const initSpin = () => {
     e.preventDefault();
     form.style.display="none";
     title.style.display="none";
+    lasttitle.style.display="none";
     title.parentElement.classList.remove('justify-content-center');
     toucan.style.display="flex";
     const target = document.querySelector('#spinner');
