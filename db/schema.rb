@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_07_053314) do
+ActiveRecord::Schema.define(version: 2019_06_10_132947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,20 @@ ActiveRecord::Schema.define(version: 2019_06_07_053314) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.text "description"
+    t.boolean "interested"
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "trip_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "photo"
+    t.index ["trip_id"], name: "index_events_on_trip_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -92,6 +106,7 @@ ActiveRecord::Schema.define(version: 2019_06_07_053314) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "events", "trips"
   add_foreign_key "tasks", "countries"
   add_foreign_key "todos", "tasks"
   add_foreign_key "todos", "trips"
