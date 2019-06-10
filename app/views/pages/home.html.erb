@@ -1,7 +1,8 @@
 <!-- form for trip creation -->
 <div class="image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<%= image_path 'dubrovnik.jpg' %>);">
   <div class="container">
-    <div class="row justify-content-center subcont align-items-center ">
+    <div class="d-flex justify-content-center subcont align-items-center ">
+      <h1 id="home-title">Prepare your holiday in a simple way !</h1>
       <div class="calendar lo">
         <%= simple_form_for [@trip] do |f| %>
           <div class="d-flex justify-content-between lo mb-2">
