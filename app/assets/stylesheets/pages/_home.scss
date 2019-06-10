@@ -4,3 +4,16 @@
   margin-bottom: 50px;
   text-shadow: 1px 1px 3px rgba(0,0,0,1);
 }
+#toucan {
+  background-image: url(/assets/toucan-zoom-6e56c806dca946182d895331119f0b31a6b3ccc0959fc37ed8a0716a4bd92bbc.png);
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  margin-top: 100px;
+}
