@@ -66,17 +66,63 @@
 }
 
 .jsitem {
-  &:hover {
     cursor: grab;
-  }
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.jsitem:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
 }
 
 .jstodo  {
-  &:hover {
     cursor: grab;
-  }
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
 }
 
+.jstodo:active  {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.jsdone  {
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.jsdone:active  {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.done-list-group {
+  min-height: 200px;
+  position: relative;
+}
+
+.border-drop-zone {
+  border: 2px dashed #A9A9A9;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.flexbox-dropzone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#drag-item-text {
+  text-align: center;
+  color: #A9A9A9;
+}
 
 .list-item .item.ghost {
   filter: grayscale(1);
