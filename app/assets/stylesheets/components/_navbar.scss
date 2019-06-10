@@ -3,11 +3,20 @@
   background: $white;
 }
 
+#logo {
+  display: flex;
+  justify-content: space-around;
+}
+
 a {
   color: $my-light-blue;
   font-family: "Raleway";
   font-style: bold;
   font-size: 20px;
+}
+
+.nav-link-logo {
+  color: $my-light-blue;
 }
 
 

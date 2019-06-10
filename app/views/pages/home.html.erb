@@ -2,7 +2,11 @@
 <div class="image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<%= image_path 'dubrovnik.jpg' %>);">
   <div class="container">
     <div class="d-flex justify-content-center subcont align-items-center ">
-      <h1 id="home-title">Prepare your holiday in a simple way !</h1>
+      <div id="toucan" style="background-image: url(<%= asset_path 'toucan-zoom.png' %>); display: none;">
+        <div id="spinner"></div>
+      </div>     
+      <h1 class="home-title" id="home-title">Prepare your holiday, the simple way !</h1>
+      <br>
       <div class="calendar lo">
         <%= simple_form_for [@trip] do |f| %>
           <div class="d-flex justify-content-between lo mb-2">
@@ -14,10 +18,14 @@
           </div>
           <div class="row justify-content-center ">
         <!--   <input type="text" name= "country" placeholder="Destination" class="destinationBox"> -->
-              <%= f.button :submit, "SKRUMBLE" ,class: "btn btn-danger", id:"bouton" %>
+              <%= f.button :submit, "SKRUMBLE", class: "btn btn-danger" %>
           </div>
         <% end %>
       </div>
+      <br>
+      <br>
+      <br>
+      <h3 class="home-title" id="last-title">Skrumble the friendly Toucan flies to your rescue!</h3>
     </div>
   </div>
 </div>
