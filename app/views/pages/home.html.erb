@@ -4,7 +4,7 @@
     <div class="row justify-content-center subcont align-items-center ">
       <div class="calendar lo">
         <%= simple_form_for [@trip] do |f| %>
-          <div class="d-flex justify-content-between lo mb-4">
+          <div class="d-flex justify-content-between lo mb-2                                                                              ">
             <%= f.input :start_date, label: false, placeholder: "Departure date", as: :string, required: false, input_html: {class: "datepicker box"} %>
             <%= f.input :end_date, label: false, placeholder: "Return date", as: :string, required: false, input_html: {class: "datepicker box"} %>
           </div>
@@ -20,4 +20,3 @@
     </div>
   </div>
 </div>
-
