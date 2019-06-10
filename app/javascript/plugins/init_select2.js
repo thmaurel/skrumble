@@ -12,4 +12,4 @@ const initSelect2 = () => {
   }
 };
 
-export { initSelect2 };
+export default initSelect2;
