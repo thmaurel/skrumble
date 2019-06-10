@@ -1,7 +1,7 @@
 <% if @trip.country.photo.url.nil? %>
-<div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'dubrovnik.jpg' %>);">
+  <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.6)), url(<%= "https://source.unsplash.com/1420x800/?#{@trip.country.name},landmark" %>);">
 <% else %>
-<div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6)), url('<%= cl_image_path @trip.country.photo, crop: :fill %>')">
+  <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.6)), url(<%= cl_image_path @trip.country.photo, crop: :fill %>);">
 <% end %>
     <div class="container">
       <div class="d-flex justify-content-between">
