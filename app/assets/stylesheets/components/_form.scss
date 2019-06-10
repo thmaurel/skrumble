@@ -3,11 +3,11 @@
 }
 
 .calendar{
-  width: 500px;
   color: $light-gray;
 }
 .subcont {
   height: 100vh;
+  flex-direction: column;
 }
 .box {
   background-color:#CED4DA;
@@ -22,14 +22,31 @@
   width: 500px;
   color: $light-gray;
 }
-.destinationBox{
-  height:35px;
-  width:200px;
+
+.destinationBox {
+  padding: 6px 12px !important;
+  height:38px !important;
+  width:400px;
+}
+
+.select2-selection__arrow {
+  top: 6px !important;
+}
+
+.select2-selection__placeholder {
+  color: #495057 !important;
+  opacity: 0.8;
+}
+
+#select2-trip_country_id-container {
+  padding: 6px 12px !important;
+  height:38px !important;
+  width:400px;
   border-radius: 5px;
   border-color: transparent;
   box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.6);
   border: 1px solid #CED4DA;
-  background-color:#E9ECEF;
+  background-color:#E9ECEF !important;
   color: black;
   padding-left: 10px;
 }
@@ -40,6 +57,11 @@
 .lo {
   width: 400px;
 }
+
+#trip_start_date, #trip_end_date {
+  width: 190px;
+}
+
 #bouton {
   font-size: 14px;
 }

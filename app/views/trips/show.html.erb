@@ -23,40 +23,6 @@
         </button>
     </div>
     <div class="trip-show-flexbox">
-      <div class="icon">
-        <div class="drop-zone">
-          <div class="suitcase">
-            <i class="fas fa-suitcase"></i>
-          </div>
-          <div class="progression-bar">
-            <div>
-              <h2><i class="far fa-check-circle"></i> Good to go</h2>
-              <div id="sortDone" class="done-list-group">
-                  <% @trip.todos.each do |todo| %>
-                    <% if todo.done? %>
-                      <div class="item">
-                        <p><%= todo.task.name %></p>
-                        <!-- <p><%= todo.task.description %></p> -->
-                        <!-- <p><%= todo.task.process_time %></p> -->
-                        <p><i class="far fa-thumbs-up"></i></p>
-                      </div>
-                    <% end %>
-                  <% end %>
-                  <% @trip.trip_items.each do |trip_item| %>
-                    <% if trip_item.done? %>
-                      <div class="item">
-                        <p><%= trip_item.item.name %></p>
-                        <!-- <p><%= trip_item.quantity %></p> -->
-                        <p><i class="far fa-thumbs-up"></i></p>
-                      </div>
-                    <% end %>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-        </div>
-      </div>
-
       <div class="trip-list">
         <div>
           <h2><i class="fas fa-scroll"></i> The essentials</h2>
@@ -91,6 +57,45 @@
               <% end %>
             <% end %>
           </div>
+        </div>
+      </div>
+
+      <div class="icon">
+        <div class="drop-zone">
+          <div class="suitcase">
+            <i class="fas fa-suitcase"></i>
+          </div>
+          <div class="progression-bar">
+            <div>
+              <h2><i class="far fa-check-circle"></i> Good to go</h2>
+              <div id="sortDone" class="done-list-group <%= "flexbox-dropzone" if @trip.todos.where(done: true).empty? && @trip.trip_items.where(done: true).empty?  %> <%= "border-drop-zone" if @trip.todos.where(done: true).empty? && @trip.trip_items.where(done: true).empty?  %>">
+                <% if @trip.todos.where(done: true).empty? && @trip.trip_items.where(done: true).empty? %>
+                  <div id="drag-item-text" style="vertical-align: middle">
+                    <p>Drag items here</p>
+                  </div>
+                <% end %>
+                  <% @trip.todos.each do |todo| %>
+                    <% if todo.done? %>
+                      <div class="item jsdone">
+                        <p><%= todo.task.name %></p>
+                        <!-- <p><%= todo.task.description %></p> -->
+                        <!-- <p><%= todo.task.process_time %></p> -->
+                        <p><i class="far fa-thumbs-up"></i></p>
+                      </div>
+                    <% end %>
+                  <% end %>
+                  <% @trip.trip_items.each do |trip_item| %>
+                    <% if trip_item.done? %>
+                      <div class="item jsdone">
+                        <p><%= trip_item.item.name %></p>
+                        <!-- <p><%= trip_item.quantity %></p> -->
+                        <p><i class="far fa-thumbs-up"></i></p>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </div>

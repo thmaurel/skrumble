@@ -1,23 +1,24 @@
 <!-- form for trip creation -->
 <div class="image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<%= image_path 'dubrovnik.jpg' %>);">
   <div class="container">
-    <div class="row justify-content-center subcont align-items-center ">
+    <div class="d-flex justify-content-center subcont align-items-center ">
+      <h1 id="home-title">Prepare your holiday in a simple way !</h1>
       <div class="calendar lo">
         <%= simple_form_for [@trip] do |f| %>
-          <div class="d-flex justify-content-between lo mb-4">
+          <div class="d-flex justify-content-between lo mb-2">
             <%= f.input :start_date, label: false, placeholder: "Departure date", as: :string, required: false, input_html: {class: "datepicker box"} %>
             <%= f.input :end_date, label: false, placeholder: "Return date", as: :string, required: false, input_html: {class: "datepicker box"} %>
           </div>
-          <%= f.association :country, label: false, placeholder: "Country" %>
+          <%= f.association :country, label: false, input_html: {class: "select2 destinationBox"} %>
           <div class="contour">
           </div>
           <div class="row justify-content-center ">
         <!--   <input type="text" name= "country" placeholder="Destination" class="destinationBox"> -->
-              <%= f.button :submit, "SKRUMBLE" ,class: "btn btn-danger", id:"bouton" %>
+              <%= f.button :submit, "SKRUMBLE", class: "btn btn-danger" %>
           </div>
         <% end %>
       </div>
+    <div id="spinner"></div>
     </div>
   </div>
 </div>
-
