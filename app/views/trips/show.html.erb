@@ -12,7 +12,9 @@
         </div>
 
         <div>
-          <%= link_to "Share my trip", share_new_trip_path, class: "btn btn-outline-success" %>
+          <button type="button" class="btn btn-outline-success share-trip-modal" data-toggle="modal" data-target="#exampleModalLong">
+            Share my trip !
+          </button>
         </div>
       </div>
     </div>
@@ -102,3 +104,5 @@
     </div>
   </div>
 </div>
+
+<%= render "shared/share-trip-modal" %>
