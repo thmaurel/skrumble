@@ -4,17 +4,9 @@
   <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.6)), url(<%= cl_image_path @trip.country.photo, crop: :fill %>);">
 <% end %>
     <div class="container">
-      <div class="d-flex justify-content-between">
-        <div>
-          <h1>Hey <%= @current_user.first_name %></h1>
-          <br>
-          <h2> Let's Skrumble your trip to <%= Country.find(@trip.country_id).name %> !</h2>
-        </div>
-
-        <div>
-          <%= link_to "Share my trip", share_new_trip_path, class: "btn btn-outline-success" %>
-        </div>
-      </div>
+      <h1>Hey <%= @current_user.first_name %></h1>
+      <br>
+      <h2> Let's Skrumble your trip to <%= Country.find(@trip.country_id).name %> !</h2>
     </div>
   </div>
 
@@ -24,9 +16,11 @@
   <div class="container">
     <div class="go-skrumble-bar">
       <div class="text-align-left">
-        <h2>Go Skrumble Go</h2>
+        <h2>Here's your Skrumble of things</h2>
       </div>
-        <%= link_to '<i class="fas fa-home"></i> To Dashboard'.html_safe, dashboard_path, class: "nav-link" %>
+        <button type="button" class="btn btn-outline-warning share-trip-modal" data-toggle="modal" data-target="#exampleModalLong">
+          Share my trip !
+        </button>
     </div>
     <div class="trip-show-flexbox">
       <div class="trip-list">
@@ -107,3 +101,5 @@
     </div>
   </div>
 </div>
+
+<%= render "shared/share-trip-modal" %>
