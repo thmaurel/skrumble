@@ -1,12 +1,12 @@
-function refreshForm(outterHTML) {
-  const renderForm = document.querySelector('#share-trip-modal-container');
-  renderForm.innerHTML = innerHTML;
+function refreshForm(innerHTML) {
+  const formContainer = document.querySelector('#share-trip-form-container');
+  formContainer.innerHTML = innerHTML;
 }
 
 <% if @new_trip.errors.any? %>
-  refreshForm('<%= j render "shared/share-trip-modal" %>')
+  refreshForm('<%= j render 'shared/share_form', trip: @new_trip %>')
 <% else %>
-  const crosss = document.querySelector(".close");
+  crosss = document.querySelector(".close");
   crosss.click();
   swal("Good job!", "Your trip has been shared!", "success");
 <% end %>

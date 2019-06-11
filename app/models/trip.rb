@@ -10,7 +10,7 @@ class Trip < ApplicationRecord
 
   after_create :create_tripitems
   after_create :create_todos
-  after_create :create_events
+  # after_create :create_events
 
   private
 
