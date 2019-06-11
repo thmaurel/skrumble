@@ -4,7 +4,6 @@
   width:100%!important;
 }
 
-
 #logo {
   display: flex;
   justify-content: space-around;
@@ -16,9 +15,6 @@
 .navbar-light .navbar-nav .nav-link:hover {
     color: lightgrey;
     font-size: 15px;
-}
-.nav-link-logo {
-  color: $my-light-blue;
 }
 
 .coll{
