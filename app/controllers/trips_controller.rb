@@ -2,7 +2,7 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     authorize @trip
-    @shared_trip = Trip.new
+    @new_trip = Trip.new
   end
 
   def create
@@ -27,14 +27,14 @@ class TripsController < ApplicationController
   end
 
   def share_create
-    @shared_trip = Trip.find(params[:id])
+    @trip = Trip.find(params[:id])
     @new_user = User.find_by(email: params[:trip][:user])
-    @new_trip = @shared_trip.dup
+    @new_trip = @trip.dup
     @new_trip.user = @new_user
     authorize @new_trip
     if @new_trip.save
       respond_to do |format|
-        format.html { redirect_to trip_path(@shared_trip) }
+        format.html { redirect_to trip_path(@trip) }
         format.js
       end
     else

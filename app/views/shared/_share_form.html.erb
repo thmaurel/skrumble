@@ -1,4 +1,4 @@
-<%= simple_form_for @shared_trip, :url => share_create_trip_path, :method => :post, remote: true do |f| %>
+<%= simple_form_for trip, :url => share_create_trip_path, :method => :post, remote: true, id: "share-trip-form" do |f| %>
   <div class="modal-body">
     <%= f.input :user,:label_method => :email,:value_method => :id,:label => "Friend's e-mail" ,:include_blank => false, placeholder: "bob@gmail.com" %>
   </div>
