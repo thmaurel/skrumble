@@ -3,7 +3,7 @@ const initCollapsible = () => {
   let i;
   if (coll){
     for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
+      coll[i].addEventListener("mouseover", function() {
         this.classList.toggle("active");
         let eventId = this.nextElementSibling.dataset.idEvent;
         collapse(eventId);

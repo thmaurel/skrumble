@@ -110,6 +110,15 @@ ta.save
 
 puts "Tasks created"
 
+ev = Event.new
+ev.name = "Scuba diving"
+ev.remote_photo_url = "https://nature-plongee.com/wp-content/uploads/voyage-plongee-saba-caraibes-m-j41.jpg"
+ev.description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, dicta ea excepturi cumque, corporis mollitia incidunt maxime consequatur distinctio dolore."
+ev.start_date = "Fri, 24 May 2019"
+ev.end_date = "Fri, 24 May 2019"
+ev.trip_id = 47
+ev.save
+
 # Country.all.each do |count|
 #   tasks.each do |t|
 #     ta = Task.new

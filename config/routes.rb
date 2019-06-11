@@ -15,5 +15,7 @@ Rails.application.routes.draw do
     get :share_new, on: :member
     post :share_create, on: :member
   end
+
+  resources :events, only: [:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

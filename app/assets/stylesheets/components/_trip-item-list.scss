@@ -38,6 +38,20 @@
     margin-bottom: 50px;
   }
 
+.trip-list-group {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.todo-list-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+
   .icon .progression-bar {
     font-size: 15px;
   }
@@ -52,12 +66,17 @@
   }
 
   .item {
+    width: 175px;
+    height: 175px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
     background-color: $my-grey;
     font-size: calc(0.8em + 0.4vw);
-    padding: 2px 16px;
+    padding: 8px;
     margin-bottom: 8px;
+    border-radius: 8px;
+    align-items: center;
 
     p:first-child {
       width: 70%;
@@ -113,6 +132,20 @@
   margin-top: 20px;
 }
 
+.border-drop-zone:hover {
+  border: 3px dashed $my-light-blue;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+
+  #drag-item-text {
+    text-align: center;
+    color: $my-light-blue;
+    font-weight: bolder;
+  }
+
+}
+
 .flexbox-dropzone {
   display: flex;
   justify-content: center;
@@ -139,4 +172,3 @@
 .suitcase {
   text-align: center;
 }
-
