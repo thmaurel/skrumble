@@ -1,10 +1,10 @@
 <!-- HTML de base pour les trip-cards du trip dashboard -->
-
+<%= render 'shared/navbar' %>
 <div class="dashboard-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= image_path "dashboard.jpeg" %>);">
   <div class="container">
     <div class="d-flex justify-content-between">
       <h1>Welcome to your dashboard, <%= current_user.first_name %></h1>
-      <button type="button" class="btn btn-primary new-trip-modal" data-toggle="modal" data-target="#new-trip-modal">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-trip-modal">
         Launch demo modal
       </button>
       <!-- <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#new-trip-modal">

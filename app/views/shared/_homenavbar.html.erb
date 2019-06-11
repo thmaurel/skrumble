@@ -1,6 +1,6 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light nav-lewagon">
   <div id="logo">
-    <%= link_to image_tag('toucan-zoom.png', width: 60), root_path, class: "nav-link-logow" %>
+    <%= link_to image_tag('toucan-zoom.png', width: 60), root_path, class: "nav-link-logo" %>
     <%= link_to "SKRUMBLE", root_path, class: "nav-link" %>
   </div>
 
@@ -9,11 +9,11 @@
   </button>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse coll" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-
-
+        <li class="nav-item">
+        </li>
         <li class="nav-item dropdown">
           <% if current_user.facebook_picture_url != nil %>
           <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
@@ -24,8 +24,8 @@
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/elebail", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to '<i class="fas fa-hiking"> Dashboard</i>'.html_safe, dashboard_path, class: "nav-link" %>
+            <%= link_to '<i class="fas fa-sign-out-alt"> Log out</i>'.html_safe, destroy_user_session_path, method: :delete, class: "nav-link" %>
           </div>
         </li>
       <% else %>

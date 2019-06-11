@@ -2,12 +2,14 @@
 .home-title {
   color: $my-grey;
   margin-bottom: 50px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,1);
   h1 {
+  text-shadow: 1px 1px 3px rgba(0,0,0,1);
     font-size: calc(0.5em + 2.5vw);
     font-weight: bold;
   }
-
+  h5 {
+    //text-shadow: 1px 1px 3px rgba(0,0,0,1);
+  }
 }
 #toucan {
   background-image: url(/assets/toucan-zoom-6e56c806dca946182d895331119f0b31a6b3ccc0959fc37ed8a0716a4bd92bbc.png);
@@ -21,4 +23,7 @@
   align-items: center;
   background-position: center;
   margin-top: 100px;
+}
+.dropdown-menu{
+  background-color: rgba(0,0,0,0.1);
 }

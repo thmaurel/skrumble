@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <% if @trip.country.photo.url.nil? %>
   <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.6)), url(<%= "https://source.unsplash.com/1420x800/?#{@trip.country.name},landmark" %>);">
 <% else %>
@@ -127,4 +128,6 @@
   </div>
 </div>
 
-<%= render "shared/share-trip-modal" %>
+<div id="share-trip-modal-container">
+  <%= render "shared/share-trip-modal", trip: @new_trip %>
+</div>

@@ -16,7 +16,7 @@ class PagesController < ApplicationController
       trip.todos.each do |task|
         counter2 += 1 if task.done
       end
-      @count[trip] = {items: counter, todos: counter2}
+      @count[trip] = { items: counter, todos: counter2 }
     end
     @trip = Trip.new
   end
