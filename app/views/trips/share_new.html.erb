@@ -3,7 +3,7 @@
     <div class="share-form">
       <%= simple_form_for @shared_trip, :url => share_create_trip_path, :method => :post do |f| %>
         <%= f.input :user,:collection => @users,:label_method => :email,:value_method => :id,:label => "User" ,:include_blank => false %>
-        <%= f.submit "Share the trip !", class: "btn btn-warning" %>
+        <%= f.submit "Share the trip !", class: "btn bout" %>
       <% end %>
     </div>
   </div>

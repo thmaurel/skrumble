@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_10_132947) do
+ActiveRecord::Schema.define(version: 2019_06_11_161407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_132947) do
     t.boolean "done"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category"
     t.index ["task_id"], name: "index_todos_on_task_id"
     t.index ["trip_id"], name: "index_todos_on_trip_id"
   end
@@ -71,6 +72,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_132947) do
     t.boolean "done"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category"
     t.index ["item_id"], name: "index_trip_items_on_item_id"
     t.index ["trip_id"], name: "index_trip_items_on_trip_id"
   end

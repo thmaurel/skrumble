@@ -6,7 +6,7 @@ const initFlatpickr = () => {
   const datepicker = document.querySelector(".datepicker");
   if (datepicker) {
     flatpickr(".datepicker", {
-      dateFormat: "l, j F Y",
+      dateFormat: "j, F Y",
       minDate: "today",
       plugins: [new rangePlugin({ input: "#trip_end_date"})]
     });

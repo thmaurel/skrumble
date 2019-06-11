@@ -1,5 +1,6 @@
 <!-- form for trip creation -->
-<div class="image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<%= image_path 'dubrovnik.jpg' %>);">
+<%= render "shared/homenavbar" %>
+<div class="image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<%= image_path 'home-picture.jpg' %>);">
   <div class="container">
     <div class="d-flex justify-content-center subcont align-items-center ">
       <div id="toucan" style="background-image: url(<%= asset_path 'toucan-zoom.png' %>); display: none;">
@@ -8,7 +9,7 @@
       <div class="home-title">
         <div class="mb-5 text-align-center">
           <h1 id="home-title">Adventure begins in your suitcase</h1>
-          <h4 id="last-title">Let us help you prepare your suitcase and arrival in your future destination</h3>
+          <h5 id="last-title">Let us help you prepare your suitcase and arrival in your future destination</h5>
         </div>
         <%= render "shared/new_trip_form" %>
       </div>

@@ -8,8 +8,9 @@
           <span aria-hidden="true" class="close">&times;</span>
         </button>
       </div>
-
-      <%= render 'shared/share_form' %>
+      <div id="share-trip-form-container">
+        <%= render 'shared/share_form', trip: trip %>
+      </div>
     </div>
   </div>
 </div>

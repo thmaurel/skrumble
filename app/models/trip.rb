@@ -2,15 +2,15 @@ class Trip < ApplicationRecord
   belongs_to :user
   belongs_to :country
   has_many :trip_items
-  has_many :todos
-  has_many :events
+  has_many :todos, dependent: :destroy
+  has_many :events, dependent: :destroy
 
   validates :start_date, presence: true
   validates :end_date, presence: true
 
   after_create :create_tripitems
   after_create :create_todos
-  after_create :create_events
+  # after_create :create_events
 
   private
 
@@ -68,15 +68,15 @@ class Trip < ApplicationRecord
     eve.end_date = "Fri, 24 May 2019"
     eve.save
 
-    even = Event.new
-    even.trip = self
-    even.name = "Big Party"
-    even.category = "Nightlife"
-    even.remote_photo_url = "https://mixmag.fr/assets/uploads/images/_columns2/FCKNYE-FESTIVAL-2017-%C2%A9-Axel-Pics.JPG"
-    even.description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, dicta ea excepturi cumque, corporis mollitia incidunt maxime consequatur distinctio dolore."
-    even.start_date = "Fri, 24 May 2019"
-    even.end_date = "Fri, 24 May 2019"
-    even.save
+    # even = Event.new
+    # even.trip = self
+    # even.name = "Big Party"
+    # even.category = "Nightlife"
+    # even.remote_photo_url = "https://mixmag.fr/assets/uploads/images/_columns2/FCKNYE-FESTIVAL-2017-%C2%A9-Axel-Pics.JPG"
+    # even.description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, dicta ea excepturi cumque, corporis mollitia incidunt maxime consequatur distinctio dolore."
+    # even.start_date = "Fri, 24 May 2019"
+    # even.end_date = "Fri, 24 May 2019"
+    # even.save
 
   end
 end
