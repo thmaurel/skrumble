@@ -65,6 +65,16 @@ const markAsDone = (id) => {
     }
     let jsDropZone = document.querySelector(`#sortDone`);
     jsDropZone.classList.remove(`flexbox-dropzone`);
+    let borderDropZone = document.querySelector('.border-drop-zone');
+    if (borderDropZone) {
+      borderDropZone.classList.remove(`border-drop-zone`);
+    }
+    let itemsIcons = document.querySelector(`.jsitem[data-id-trip='${id}']`);
+    if (itemsIcons) {
+      console.log(itemsIcons);
+      itemsIcons.classList.remove(`jsitem`);
+      itemsIcons.classList.add(`jsdone`);
+    }
   });
 }
 
@@ -84,6 +94,10 @@ const markAsComplete = (id) => {
     jsDragItemText.innerHTML = "";
     let jsDropZone = document.querySelector(`#sortDone`);
     jsDropZone.classList.remove(`flexbox-dropzone`);
+    let borderDropZone = document.querySelector('.border-drop-zone');
+    borderDropZone.classList.remove(`border-drop-zone`);
+    let itemsIcons = document.querySelector(`.jsdone`);
+    itemsIcons.classList.add(`.jsdone`);
   });
 }
 
