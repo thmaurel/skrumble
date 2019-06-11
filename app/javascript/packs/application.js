@@ -12,5 +12,4 @@ initSortable();
 initFlatpickr();
 initSelect2();
 initSpin();
-
 initCollapsible();
