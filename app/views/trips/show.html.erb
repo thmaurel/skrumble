@@ -30,11 +30,13 @@
               <% @trip.trip_items.each do |trip_item| %>
                 <% if trip_item.done == false %>
                   <div class="item jsitem" data-id-trip="<%= trip_item.id %>">
-                    <p><%= trip_item.item.name %></p>
-                    <p class="quantity"><%= trip_item.quantity %></p>
-                    <% if trip_item.done == false %>
+                    <div class="item-icon">
+                      <%= image_tag('tshirt.png', width: 80) %>
+                    </div>
+                    <p><%= trip_item.item.name %> <span class="quantity">x<%= trip_item.quantity %></span></p>
+                   <!--  <% if trip_item.done == false %>
                       <p class="status"><i class="far fa-thumbs-down"></i></p>
-                    <% end %>
+                    <% end %> -->
                   </div>
                 <% end %>
               <% end %>
@@ -50,9 +52,9 @@
                   <p><%= todo.task.name %></p>
                   <p><%= todo.task.description %></p>
                   <p><%= todo.task.process_time %></p>
-                  <% if todo.done == false %>
+              <!--     <% if todo.done == false %>
                     <p class="status"><i class="far fa-thumbs-down"></i></p>
-                  <% end %>
+                  <% end %> -->
                 </div>
               <% end %>
             <% end %>
@@ -80,16 +82,19 @@
                         <p><%= todo.task.name %></p>
                         <!-- <p><%= todo.task.description %></p> -->
                         <!-- <p><%= todo.task.process_time %></p> -->
-                        <p><i class="far fa-thumbs-up"></i></p>
+                       <!--  <p><i class="far fa-thumbs-up"></i></p> -->
                       </div>
                     <% end %>
                   <% end %>
                   <% @trip.trip_items.each do |trip_item| %>
                     <% if trip_item.done? %>
                       <div class="item jsdone">
+                        <div class="item-icon">
+                          <%= image_tag('tshirt.png', width: 80) %>
+                        </div>
                         <p><%= trip_item.item.name %></p>
                         <!-- <p><%= trip_item.quantity %></p> -->
-                        <p><i class="far fa-thumbs-up"></i></p>
+                        <!-- <p><i class="far fa-thumbs-up"></i></p> -->
                       </div>
                     <% end %>
                   <% end %>
