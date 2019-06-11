@@ -68,14 +68,15 @@ class Trip < ApplicationRecord
     eve.end_date = "Fri, 24 May 2019"
     eve.save
 
-    # even = Event.new
-    # even.trip = self
-    # even.name = "Big Party"
-    # even.category = "Nightlife"
-    # even.remote_photo_url = ["https://mixmag.fr/assets/uploads/images/_columns2/FCKNYE-FESTIVAL-2017-%C2%A9-Axel-Pics.JPG", "https://res.cloudinary.com/rikou87/image/upload/v1560242311/quuehxlxzonzk1gpekmp.jpg", "https://res.cloudinary.com/rikou87/image/upload/v1560242311/avwargp5aga4yfj5knmv.jpg"]
-    # even.description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, dicta ea excepturi cumque, corporis mollitia incidunt maxime consequatur distinctio dolore."
-    # even.start_date = "Fri, 24 May 2019"
-    # even.end_date = "Fri, 24 May 2019"
-    # even.save
+    even = Event.new
+    even.trip = self
+    even.name = "Big Party"
+    even.category = "Nightlife"
+    even.remote_photo_url = "https://mixmag.fr/assets/uploads/images/_columns2/FCKNYE-FESTIVAL-2017-%C2%A9-Axel-Pics.JPG"
+    even.description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, dicta ea excepturi cumque, corporis mollitia incidunt maxime consequatur distinctio dolore."
+    even.start_date = "Fri, 24 May 2019"
+    even.end_date = "Fri, 24 May 2019"
+    even.save
+
   end
 end

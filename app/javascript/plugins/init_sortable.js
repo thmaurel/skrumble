@@ -51,16 +51,18 @@ const markAsDone = (id) => {
   })
   // .then(response => response.json())
   .then((data) => {
-    let jsItemStatus = document.querySelector(`.jsitem[data-id-trip='${id}'] .status`);
-    jsItemStatus.innerHTML = '<i class="far fa-thumbs-up"></i>'
+    // let jsItemStatus = document.querySelector(`.jsitem[data-id-trip='${id}'] .status`);
+    // jsItemStatus.innerHTML = '<i class="far fa-thumbs-up"></i>'
     let jsItemQuanity = document.querySelector(`.jsitem[data-id-trip='${id}'] .quantity`);
-    jsItemQuanity.innerText = ""
+    jsItemQuanity.outerHTML = "";
     // let link = document.querySelector(`.jsitem[data-id-trip='${id}'] .link`);
     // link.outerHTML = ""
     let jsDoneList = document.querySelector(`.done-list-group`);
     jsDoneList.style.borderColor = "white";
     let jsDragItemText = document.querySelector('#drag-item-text');
-    jsDragItemText.innerHTML = "";
+    if (jsDragItemText) {
+      jsDragItemText.innerHTML = "";
+    }
     let jsDropZone = document.querySelector(`#sortDone`);
     jsDropZone.classList.remove(`flexbox-dropzone`);
   });
@@ -72,8 +74,8 @@ const markAsComplete = (id) => {
   })
   // .then(response => response.json())
   .then((data) => {
-    let jstodo = document.querySelector(`.jstodo[data-id-todo='${id}'] .status`);
-    jstodo.innerHTML = '<i class="far fa-thumbs-up"></i>'
+    // let jstodo = document.querySelector(`.jstodo[data-id-todo='${id}'] .status`);
+    // jstodo.innerHTML = '<i class="far fa-thumbs-up"></i>'
     // let link = document.querySelector(`.jstodo[data-id-todo='${id}'] .link`);
     // link.outerHTML = ""
     let jsDoneList = document.querySelector(`.done-list-group`);
