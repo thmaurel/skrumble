@@ -2,7 +2,15 @@
 
 <div class="dashboard-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= "https://source.unsplash.com/1420x800/?seychelles" %>);">
   <div class="container">
-    <h1>Welcome to your dashboard, <%= current_user.first_name %></h1>
+    <div class="d-flex justify-content-between">
+      <h1>Welcome to your dashboard, <%= current_user.first_name %></h1>
+      <button type="button" class="btn btn-primary new-trip-modal" data-toggle="modal" data-target="#new-trip-modal">
+        Launch demo modal
+      </button>
+      <!-- <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#new-trip-modal">
+        Create new trip !
+      </button> -->
+    </div>
   </div>
 </div>
 <div class="container">
@@ -60,3 +68,4 @@
     <% end %>
   </div>
 </div>
+<%= render "shared/new-trip-modal" %>

@@ -1,0 +1,6 @@
+<%= simple_form_for [@trip], html: {class: "new-trip-form"} do |f| %>
+  <%= f.input :start_date, label: false, placeholder: "Departure date", as: :string, required: false, input_html: {class: "datepicker"} %>
+  <%= f.input :end_date, label: false, placeholder: "Return date", as: :string, required: false, input_html: {class: "datepicker"} %>
+  <%= f.association :country, label: false, input_html: {class: "select2"} %>
+  <%= f.button :submit, "SKRUMBLE", class: "btn btn-danger cal-button" %>
+<% end %>

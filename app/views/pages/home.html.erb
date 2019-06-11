@@ -4,28 +4,14 @@
     <div class="d-flex justify-content-center subcont align-items-center ">
       <div id="toucan" style="background-image: url(<%= asset_path 'toucan-zoom.png' %>); display: none;">
         <div id="spinner"></div>
+      </div>
+      <div class="home-title">
+        <div class="mb-5 text-align-center">
+          <h1 id="home-title">Adventure begins in your suitcase</h1>
+          <h4 id="last-title">Let us help you prepare your suitcase and arrival in your future destination</h3>
         </div>
-        <h1 class="home-title" id="home-title">Prepare your holiday, the simple way !</h1>
-        <br>
-        <div class="calendar lo">
-          <%= simple_form_for [@trip] do |f| %>
-            <div class="d-flex justify-content-between lo mb-2">
-              <%= f.input :start_date, label: false, placeholder: "Departure date", as: :string, required: false, input_html: {class: "datepicker box"} %>
-              <%= f.input :end_date, label: false, placeholder: "Return date", as: :string, required: false, input_html: {class: "datepicker box"} %>
-            </div>
-          <%= f.association :country, label: false, input_html: {class: "select2 destinationBox"} %>
-          <div class="contour">
-          </div>
-          <div class="row justify-content-center ">
-        <!--   <input type="text" name= "country" placeholder="Destination" class="destinationBox"> -->
-            <%= f.button :submit, "SKRUMBLE", class: "btn btn-danger" %>
-          </div>
-          <% end %>
-       </div>
-      <br>
-      <br>
-      <br>
-      <h3 class="home-title" id="last-title">Skrumble the friendly Toucan flies to your rescue!</h3>
+        <%= render "shared/new_trip_form" %>
+      </div>
     </div>
   </div>
 </div>
