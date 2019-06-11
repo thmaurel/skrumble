@@ -68,7 +68,6 @@ class Trip < ApplicationRecord
     eve.end_date = "Fri, 24 May 2019"
     eve.save
 
-
     even = Event.new
     even.trip = self
     even.name = "Big Party"
@@ -78,5 +77,6 @@ class Trip < ApplicationRecord
     even.start_date = "Fri, 24 May 2019"
     even.end_date = "Fri, 24 May 2019"
     even.save
+
   end
 end
