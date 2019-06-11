@@ -9,10 +9,13 @@
 }
 
 a {
-  color: $my-light-blue;
+  color: white;
   font-family: "Raleway";
   font-style: bold;
   font-size: 20px;
+}
+a:hover{
+  color: white;
 }
 
 .nav-link-logo {
