@@ -18,5 +18,6 @@ class PagesController < ApplicationController
       end
       @count[trip] = {items: counter, todos: counter2}
     end
+    @trip = Trip.new
   end
 end
