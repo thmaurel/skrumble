@@ -29,6 +29,7 @@ class TripsController < ApplicationController
   def share_create
     @trip = Trip.find(params[:id])
     @new_user = User.find_by(email: params[:trip][:user])
+    if @new_user != current_user
     @new_trip = @trip.dup
     @new_trip.user = @new_user
     authorize @new_trip
@@ -43,6 +44,7 @@ class TripsController < ApplicationController
         format.js
       end
     end
+   end
   end
 
   private
