@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FFFFFF;}
-</style>
-<path class="st0" d="M57,13.5h-2v-3H45v3h-4V7.7c0-1.8-1.4-3.2-3.2-3.2H22.2c-1.8,0-3.2,1.4-3.2,3.2v5.8h-4v-3H5v3H3
-	c-1.7,0-3,1.4-3,3v36c0,1.7,1.4,3,3,3h54c1.7,0,3-1.4,3-3v-36C60,14.9,58.6,13.5,57,13.5z M47,12.5h6v1h-6V12.5z M21,7.7
-	c0-0.7,0.5-1.2,1.2-1.2h15.6C38.5,6.5,39,7,39,7.7v5.8H21V7.7z M14.8,15.5h30.4h5.5h6.9v38H2.4v-38h6.9H14.8z M7,12.5h6v1H7V12.5z"
-	/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 51"><defs><style>.cls-1{fill:#eaeaea;}</style></defs><title>case2Fichier 3</title><g id="Calque_2" data-name="Calque 2"><g id="Capa_1" data-name="Capa 1"><path class="cls-1" d="M57,9H55V6H45V9H41V3.2A3.16,3.16,0,0,0,37.8,0H22.2A3.16,3.16,0,0,0,19,3.2V9H15V6H5V9H3a3,3,0,0,0-3,3V48a3,3,0,0,0,3,3H57a3,3,0,0,0,3-3V12A3.08,3.08,0,0,0,57,9ZM47,8h6V9H47ZM21,3.2A1.16,1.16,0,0,1,22.2,2H37.8A1.16,1.16,0,0,1,39,3.2V9H21ZM14.8,11H57.6V49H2.4V11H14.8ZM7,8h6V9H7Z"/></g></g></svg>
