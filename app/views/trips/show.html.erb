@@ -5,9 +5,7 @@
   <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.6)), url(<%= cl_image_path @trip.country.photo, crop: :fill %>);">
 <% end %>
     <div class="container">
-      <h1>Hey <%= @current_user.first_name %></h1>
-      <br>
-      <h2> Let's Skrumble your trip to <%= Country.find(@trip.country_id).name %> !</h2>
+      <h1>Let's <span class="skrumble-banner">Skrumble</span> your trip to <%= Country.find(@trip.country_id).name %> !</h1>
     </div>
   </div>
 
@@ -15,14 +13,6 @@
 
 <div>
   <div class="container">
-    <div class="go-skrumble-bar">
-      <div class="text-align-left">
-        <h2>Here's your Skrumble of things</h2>
-      </div>
-        <button type="button" class="btn btn-outline-warning share-trip-modal" data-toggle="modal" data-target="#share-trip-modal">
-          Share my trip !
-        </button>
-    </div>
     <div class="trip-show-flexbox">
       <div class="trip-list">
         <div>
@@ -67,13 +57,13 @@
       </div>
 
       <div class="icon">
-        <div class="drop-zone" style="background-image: url(<%= image_path('briefcase2.svg') %>); background-size: cover; background-repeat: no-repeat;" >
+        <div class="drop-zone" style="background-image: url(<%= image_path('briefcase2.svg') %>); background-size: fill; background-repeat: no-repeat;" >
 <!--           <div class="suitcase">
             <i class="fas fa-suitcase"></i>
           </div> -->
           <div class="progression-bar">
             <div>
-              <h2><i class="far fa-check-circle"></i> Good to go</h2>
+              <!-- <h2><i class="far fa-check-circle"></i> Your suitcase</h2> -->
               <div id="sortDone" class="done-list-group <%= "flexbox-dropzone" if @trip.todos.where(done: true).empty? && @trip.trip_items.where(done: true).empty?  %> <%= "border-drop-zone" if @trip.todos.where(done: true).empty? && @trip.trip_items.where(done: true).empty?  %>">
                 <% if @trip.todos.where(done: true).empty? && @trip.trip_items.where(done: true).empty? %>
                   <div id="drag-item-text" style="vertical-align: middle">
@@ -107,6 +97,14 @@
             </div>
         </div>
       </div>
+    </div>
+    <div class="go-skrumble-bar">
+      <div class="text-align-left">
+        <h2></h2>
+      </div>
+        <button type="button" class="btn btn-outline-warning share-trip-modal" data-toggle="modal" data-target="#share-trip-modal">
+          Share my trip !
+        </button>
     </div>
     <h1>Events <span class="blue">SKRUMBLE</span> found for <span class="blue">YOU</span> !</h1>
     <div class="events mb-5">
