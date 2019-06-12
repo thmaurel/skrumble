@@ -7,12 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Todo.destroy_all
+TripEvent.destroy_all
 TripItem.destroy_all
 Trip.destroy_all
 Item.destroy_all
+Event.destroy_all
 Task.destroy_all
 Country.destroy_all
 User.destroy_all
+
 
 u = User.new
 u.first_name = "Emeric"
@@ -150,50 +153,38 @@ ta.save
 
 puts "Tasks created"
 
+e = Event.new
+e.name = "Scuba diving"
+e.category = "Watersport"
+e.remote_photo_url = "https://nature-plongee.com/wp-content/uploads/voyage-plongee-saba-caraibes-m-j41.jpg"
+e.description = "Try new things, don't be a cheap bastard"
+e.start_date = "Fri, 24 May 2019"
+e.end_date = "Fri, 24 May 2019"
+e.save
+
 ev = Event.new
-ev.name = "Scuba diving"
-ev.remote_photo_url = "https://nature-plongee.com/wp-content/uploads/voyage-plongee-saba-caraibes-m-j41.jpg"
+ev.name = "Forest walk"
+ev.category = "Outdoor activities"
+ev.remote_photo_url = "https://www.wedemain.fr/photo/art/grande/28623324-28127445.jpg?v=1544095128"
 ev.description = "Try new things, don't be a cheap bastard"
 ev.start_date = "Fri, 24 May 2019"
 ev.end_date = "Fri, 24 May 2019"
-ev.trip_id = 47
 ev.save
 
-# Country.all.each do |count|
-#   tasks.each do |t|
-#     ta = Task.new
-#     ta.name = t
-#     ta.country = count
-#     ta.save
-#   end
-# end
+eve = Event.new
+eve.name = "Barbecue"
+eve.category = "Food"
+eve.remote_photo_url = "https://previews.123rf.com/images/innocent/innocent1003/innocent100300039/11710255-gros-plan-d-un-barbecue-d-%C3%A9t%C3%A9-.jpg"
+eve.description = "Try new things, don't be a cheap bastard"
+eve.start_date = "Fri, 24 May 2019"
+eve.end_date = "Fri, 24 May 2019"
+eve.save
 
-
-# html = open("https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/").read
-# html_doc = Nokogiri::HTML(html)
-# html_doc.search('#recherche_pays option').each do |ct|
-#   puts '"' + ct.text + '", "' + ct.values[0] + '"'
-#   c = Country.new
-#   c.name = ct.text
-#   c.save
-# end
-
-# CSV.foreach('countries.csv') do |row|
-#   name = row[0]
-#   link = "https://www.diplomatie.gouv.fr/" + row[1]
-#   fj = 0
-#   html = open(link).read
-#   html_doc = Nokogiri::HTML(html)
-#   html_doc.search('#sante p').each do |text|
-#     if (text.text.include? "fièvre jaune")
-#       fj = 1
-#     end
-#   end
-#   if fj == 1
-#     puts name + " : Fièvre Jaune todo"
-#   else
-#     puts name + " : Fièvre Jaune not todo"
-#   end
-# end
-
-
+ev = Event.new
+ev.name = "Walk in the desert"
+ev.category = "Outdoor activities"
+ev.remote_photo_url = "https://images.unsplash.com/photo-1489493585363-d69421e0edd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+ev.description = "Try new things, don't be a cheap bastard"
+ev.start_date = "Fri, 24 May 2019"
+ev.end_date = "Fri, 24 May 2019"
+ev.save
