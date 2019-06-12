@@ -6,6 +6,21 @@
   }
 }
 
+#btn-add-trip {
+  border: 1px dashed rgba(0,0,0,0.5);
+  background-color: $my-grey;
+  color: $my-light-blue;
+  height: 100%;
+  width: 100%;
+  font-size: 64px;
+  width: 270px;
+  height: 200px;
+  &:hover {
+    background-color: rgba(54,109,215,0.1);
+    font-size: 80px;
+  }
+}
+
 .card-trip-image {
   height: 200px;
   width:270px;

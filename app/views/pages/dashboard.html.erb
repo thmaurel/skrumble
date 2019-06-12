@@ -4,14 +4,16 @@
   <div class="container">
     <div class="d-flex justify-content-between">
       <h1>Welcome to your dashboard, <%= current_user.first_name %>!</h1>
-      <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#new-trip-modal">
-        Create a new trip
-      </button>
     </div>
   </div>
 </div>
 <div class="container">
   <div class="trips-cards">
+    <div class="card-trip">
+      <button type="button" id="btn-add-trip" class="stretched-link" data-toggle="modal" data-target="#new-trip-modal">+
+      </button>
+    </div>
+
     <% current_user.trips.each do |trip| %>
       <div class="card-trip">
         <% if trip.country.photo.url.nil? %>
@@ -72,3 +74,7 @@
 <div class="container">
   <%= render "shared/new-trip-modal" %>
 </div>
+
+
+
+
