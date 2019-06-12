@@ -36,9 +36,9 @@
     font-size: 15px;
 }
 .bout{
-  margin-left: 20px;
+  margin-left: -5px;
   color: white;
-  background-color: #FFAD40; /* Green */
+  background-color: #FFB866; /* Green */
   border: none;
   height: 38px;
   text-align: center;
@@ -48,9 +48,9 @@
   border-radius: 5px;
 }
 .bout:hover{
-  margin-left: 20px;
+  margin-left: -5px;
   color: white;
-  background-color: #eda13d;
+  background-color: #FFB866;
    /* Green */
   border: none;
   height: 38px;
@@ -63,7 +63,7 @@
 
 .bout2 {
   color: white;
-  background-color: #FFAD40; /* Green */
+  background-color: #FFB866; /* Green */
   border: none;
   height: 38px;
   text-align: center;
@@ -71,10 +71,11 @@
   display: inline-block;
   font-size: 16px;
   border-radius: 5px;
+  margin-right: -20px;
 }
 .bout2:hover {
   color: white;
-  background-color: #eda13d;
+  background-color: #FFB866;
    /* Green */
   border: none;
   height: 38px;
