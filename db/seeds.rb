@@ -42,14 +42,14 @@ item.each do |it|
   i.ratio = 1
   i.ratio = 0.3 if it == "Pullover"
   i.ratio = 0 if it == "Toilet bag"
-  if i.name == "Pullovers"
+  if i.name == "Pullover"
+    i.icon = "hoodie.svg"
     i.category = 1
-
   elsif i.name == "Short"
     i.icon = "shorts.png"
     i.category = 2
   elsif i.name == "Socks"
-    i.icon = "socks.png"
+    i.icon = "socks.svg"
     i.category = 3
   elsif i.name == "T-shirt"
     i.icon = "tshirt.png"
@@ -58,6 +58,7 @@ item.each do |it|
     i.icon = "underwear.png"
     i.category = 5
   elsif i.name == "Toilet bag"
+    i.icon = "toiletries.svg"
     i.category = 6
   end
   i.save
@@ -71,13 +72,19 @@ taco = Country.find_by(name: "North Korea")
 ta = Task.new
 ta.name = "Passport"
 ta.country = taco
+ta.category = 1
+ta.icon = "passport.svg"
 ta.save
 ta = Task.new
 ta.name = "Visa"
 ta.country = taco
+ta.category = 2
+ta.icon = "visa.svg"
 ta.save
 ta = Task.new
 ta.name = "Rabies vaccine"
+ta.icon = "vaccin.svg"
+ta.category = 5
 ta.country = taco
 ta.save
 
@@ -111,19 +118,23 @@ ta.save
 taco = Country.find_by(name: "Namibia")
 ta = Task.new
 ta.name = "Passport"
+ta.category = 5
 ta.country = taco
 ta.save
 ta = Task.new
 ta.name = "Visa"
+ta.category = 3
 ta.country = taco
 ta.save
 ta = Task.new
 ta.name = "Yellow fever vaccine"
 ta.country = taco
+ta.category = 2
 ta.save
 ta = Task.new
 ta.name = "Typhoid vaccine"
 ta.country = taco
+ta.category = 4
 ta.save
 
 puts "Tasks created"
