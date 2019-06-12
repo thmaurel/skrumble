@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
   mount_uploader :photo, PhotoUploader
-  belongs_to :trip
+  has_many :trip_events
 
   validates :name, presence: true
   validates :start_date, presence: true

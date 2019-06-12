@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_12_091629) do
+ActiveRecord::Schema.define(version: 2019_06_12_132933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,14 +26,11 @@ ActiveRecord::Schema.define(version: 2019_06_12_091629) do
     t.string "name"
     t.string "category"
     t.text "description"
-    t.boolean "interested"
     t.date "start_date"
     t.date "end_date"
-    t.bigint "trip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
-    t.index ["trip_id"], name: "index_events_on_trip_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -67,6 +64,16 @@ ActiveRecord::Schema.define(version: 2019_06_12_091629) do
     t.integer "category"
     t.index ["task_id"], name: "index_todos_on_task_id"
     t.index ["trip_id"], name: "index_todos_on_trip_id"
+  end
+
+  create_table "trip_events", force: :cascade do |t|
+    t.bigint "trip_id"
+    t.bigint "event_id"
+    t.boolean "interested"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_trip_events_on_event_id"
+    t.index ["trip_id"], name: "index_trip_events_on_trip_id"
   end
 
   create_table "trip_items", force: :cascade do |t|
@@ -112,10 +119,11 @@ ActiveRecord::Schema.define(version: 2019_06_12_091629) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "events", "trips"
   add_foreign_key "tasks", "countries"
   add_foreign_key "todos", "tasks"
   add_foreign_key "todos", "trips"
+  add_foreign_key "trip_events", "events"
+  add_foreign_key "trip_events", "trips"
   add_foreign_key "trip_items", "items"
   add_foreign_key "trip_items", "trips"
   add_foreign_key "trips", "countries"
