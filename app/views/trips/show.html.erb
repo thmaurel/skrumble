@@ -16,7 +16,7 @@
     <div class="trip-show-flexbox">
       <div class="trip-list">
         <div>
-          <h2><i class="fas fa-scroll"></i> The essentials</h2>
+          <h2>The essentials</h2>
             <div id="sortUndone" class="trip-list-group">
               <% @trip.trip_items.each do |trip_item| %>
                 <% if trip_item.done == false %>
@@ -35,7 +35,7 @@
         </div>
         <br>
         <div>
-          <h2><i class="fas fa-passport"></i> The important</h2>
+          <h2>The important</h2>
           <div id="sortUndone" class="todo-list-group">
             <% @trip.todos.each do |todo| %>
               <% if todo.done == false %>
@@ -106,18 +106,17 @@
           Share my trip !
       </button>
     </div>
-    <h1>Events <span class="blue">SKRUMBLE</span> found for <span class="blue">YOU</span> !</h1>
+    <h2>Unique experiences <span class="blue">Skrumble</span> found in <span class="blue"><%= Country.find(@trip.country_id).name %></span></h2>
     <div class="events mb-5">
       <% @trip.events.each do |event| %>
       <div class="card-event">
         <%= cl_image_tag event.photo %>
-        <div class="event-desc d-flex justify-content-between align-items-center collapsible">
+        <div class="event-desc justify-content-between align-items-center">
           <h3><%= event.name %></h3>
-          <div>
-            <p><em><%= event.category %></em></p>
-            <p><strong><%= event.start_date %></strong></p>
-          </div>
-          </div>
+          <p><em><%= event.category %></em></p>
+          <p><strong><%= event.start_date %></strong></p>
+          <p><%= event.description %></p>
+        </div>
         <div class="content eventItem" data-id-event="<%= event.id %>">
           <p><%= event.description %></p>
         </div>

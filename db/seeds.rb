@@ -82,7 +82,7 @@ ta.category = 2
 ta.icon = "visa.svg"
 ta.save
 ta = Task.new
-ta.name = "Rabies vaccine"
+ta.name = "Rabies"
 ta.icon = "vaccin.svg"
 ta.category = 5
 ta.country = taco
@@ -102,7 +102,7 @@ ta.category = 2
 ta.icon = "visa.svg"
 ta.save
 ta = Task.new
-ta.name = "Rabies vaccine"
+ta.name = "Rabies"
 ta.icon = "vaccin.svg"
 ta.category = 5
 ta.country = taco
@@ -122,7 +122,7 @@ ta.category = 2
 ta.icon = "visa.svg"
 ta.save
 ta = Task.new
-ta.name = "Rabies vaccine"
+ta.name = "Rabies"
 ta.icon = "vaccin.svg"
 ta.category = 5
 ta.country = taco
@@ -142,7 +142,7 @@ ta.category = 2
 ta.icon = "visa.svg"
 ta.save
 ta = Task.new
-ta.name = "Rabies vaccine"
+ta.name = "Rabies"
 ta.icon = "vaccin.svg"
 ta.category = 5
 ta.country = taco
@@ -153,7 +153,7 @@ puts "Tasks created"
 ev = Event.new
 ev.name = "Scuba diving"
 ev.remote_photo_url = "https://nature-plongee.com/wp-content/uploads/voyage-plongee-saba-caraibes-m-j41.jpg"
-ev.description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, dicta ea excepturi cumque, corporis mollitia incidunt maxime consequatur distinctio dolore."
+ev.description = "Try new things, don't be a cheap bastard"
 ev.start_date = "Fri, 24 May 2019"
 ev.end_date = "Fri, 24 May 2019"
 ev.trip_id = 47
