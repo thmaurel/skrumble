@@ -21,7 +21,17 @@ u = User.new
 u.first_name = "Emeric"
 u.last_name = "Le Bail"
 #u.username = "Bob"
-u.email = "abc@gmail.com"
+u.email = "emeric@gmail.com"
+u.password = "abc123"
+u.password_confirmation = "abc123"
+u.save
+
+u = User.new
+u.first_name = "Raphael"
+u.last_name = "Mantello"
+#u.username = "Bob"
+u.email = "raphael@gmail.com"
+u.remote_photo_url = "https://kitt.lewagon.com/placeholder/users/raphmantello"
 u.password = "abc123"
 u.password_confirmation = "abc123"
 u.save
