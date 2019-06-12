@@ -47,8 +47,8 @@
 
 .todo-list-group {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
 }
 
 
@@ -97,7 +97,9 @@
     cursor: grabbing;
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
-    transform: scale(0.5, 0.5);
+    transform: scale(0.7, 0.7);
+    width: 113px !important;
+    height: 100px !important;
 }
 
 .jstodo  {
@@ -110,7 +112,9 @@
     cursor: grabbing;
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
-    transform: scale(0.5, 0.5);
+    transform: scale(0.7, 0.7);
+    width: 113px !important;
+    height: 100px !important;
 }
 
 .jsdone  {
@@ -126,8 +130,8 @@
     cursor: grabbing;
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
-    transform: scale(0.5, 0.5);
-    width: 100px !important;
+    transform: scale(0.7, 0.7);
+    width: 113px !important;
     height: 100px !important;
 }
 
@@ -166,13 +170,15 @@
   justify-content: center;
   align-items: center;
   background-color: white;
-  margin-top: 100px;
-  padding-bottom: 170px;
+  margin-top: 76px;
+  padding-bottom: 159px;
+  margin-left: -4px;
 }
 
 #drag-item-text {
   text-align: center;
   color: #A9A9A9;
+  padding-top: 46px;
 }
 
 .list-item .item.ghost {

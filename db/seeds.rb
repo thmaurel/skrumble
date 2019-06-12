@@ -92,16 +92,19 @@ taco = Country.find_by(name: "Indonesia")
 ta = Task.new
 ta.name = "Passport"
 ta.country = taco
-ta.save
-ta.name = "Dengue vaccine"
-ta.country = taco
-ta.save
-ta = Task.new
-ta.name = "Typhoid vaccine"
-ta.country = taco
+ta.category = 1
+ta.icon = "passport.svg"
 ta.save
 ta = Task.new
 ta.name = "Visa"
+ta.country = taco
+ta.category = 2
+ta.icon = "visa.svg"
+ta.save
+ta = Task.new
+ta.name = "Rabies vaccine"
+ta.icon = "vaccin.svg"
+ta.category = 5
 ta.country = taco
 ta.save
 
@@ -109,32 +112,40 @@ taco = Country.find_by(name: "New Zealand")
 ta = Task.new
 ta.name = "Passport"
 ta.country = taco
+ta.category = 1
+ta.icon = "passport.svg"
 ta.save
 ta = Task.new
 ta.name = "Visa"
+ta.country = taco
+ta.category = 2
+ta.icon = "visa.svg"
+ta.save
+ta = Task.new
+ta.name = "Rabies vaccine"
+ta.icon = "vaccin.svg"
+ta.category = 5
 ta.country = taco
 ta.save
 
 taco = Country.find_by(name: "Namibia")
 ta = Task.new
 ta.name = "Passport"
-ta.category = 5
 ta.country = taco
+ta.category = 1
+ta.icon = "passport.svg"
 ta.save
 ta = Task.new
 ta.name = "Visa"
-ta.category = 3
-ta.country = taco
-ta.save
-ta = Task.new
-ta.name = "Yellow fever vaccine"
 ta.country = taco
 ta.category = 2
+ta.icon = "visa.svg"
 ta.save
 ta = Task.new
-ta.name = "Typhoid vaccine"
+ta.name = "Rabies vaccine"
+ta.icon = "vaccin.svg"
+ta.category = 5
 ta.country = taco
-ta.category = 4
 ta.save
 
 puts "Tasks created"

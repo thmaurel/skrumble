@@ -95,9 +95,15 @@ const markAsComplete = (id) => {
     let jsDropZone = document.querySelector(`#sortDone`);
     jsDropZone.classList.remove(`flexbox-dropzone`);
     let borderDropZone = document.querySelector('.border-drop-zone');
-    borderDropZone.classList.remove(`border-drop-zone`);
-    let itemsIcons = document.querySelector(`.jsdone`);
-    itemsIcons.classList.add(`.jsdone`);
+    if (borderDropZone) {
+      borderDropZone.classList.remove(`border-drop-zone`);
+    }
+    let itemsIcons = document.querySelector(`.jstodo[data-id-todo='${id}']`);
+    if (itemsIcons) {
+      console.log(itemsIcons);
+      itemsIcons.classList.remove(`jstodo`);
+      itemsIcons.classList.add(`jsdone`);
+    }
   });
 }
 
