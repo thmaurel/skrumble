@@ -1,9 +1,9 @@
 class Trip < ApplicationRecord
   belongs_to :user
   belongs_to :country
-  has_many :trip_items
+  has_many :trip_items, dependent: :destroy
   has_many :todos, dependent: :destroy
-  has_many :events, dependent: :destroy
+  has_many :trip_events, dependent: :destroy
 
   validates :start_date, presence: true
   validates :end_date, presence: true
