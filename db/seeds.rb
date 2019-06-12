@@ -55,7 +55,7 @@ item.each do |it|
     i.icon = "tshirt.png"
     i.category = 4
   elsif i.name == "Underwear"
-    i.icon = "underware.png"
+    i.icon = "underwear.png"
     i.category = 5
   elsif i.name == "Toilet bag"
     i.category = 6
