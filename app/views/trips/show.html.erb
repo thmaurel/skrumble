@@ -108,19 +108,15 @@
     </div>
     <h2>Unique experiences <span class="blue">Skrumble</span> found in <span class="blue"><%= Country.find(@trip.country_id).name %></span></h2>
     <div class="events mb-5">
-      <% @trip.events.each do |event| %>
+      <% @trip.trip_events.each do |trip_event| %>
       <div class="card-event">
-        <%= cl_image_tag event.photo %>
+        <%= cl_image_tag trip_event.event.photo %>
         <div class="event-desc justify-content-between align-items-center">
-          <h3><%= event.name %></h3>
-          <p><em><%= event.category %></em></p>
-          <p><strong><%= event.start_date %></strong></p>
-          <p><%= event.description %></p>
+          <h3><%= trip_event.event.name %></h3>
+          <p><em><%= trip_event.event.category %></em></p>
+          <p><strong><%= trip_event.event.start_date %></strong></p>
+          <p><%= trip_event.event.description %></p>
         </div>
-        <div class="content eventItem" data-id-event="<%= event.id %>">
-          <p><%= event.description %></p>
-        </div>
-
       </div>
       <% end %>
     </div>
