@@ -24,7 +24,7 @@
             <% elsif (trip.trip_items.count - @count[trip][:items] == 0) && (trip.todos.count - @count[trip][:todos] == 0) %>
               <p class="label-ready">Ready</p>
             <% else %>
-              <p class="label-not-ready">Not good</p>
+              <p class="label-not-ready">Not Ready</p>
             <% end %>
           </div>
         <% else %>
@@ -35,7 +35,7 @@
             <% elsif (trip.trip_items.count - @count[trip][:items] == 0) && (trip.todos.count - @count[trip][:todos] == 0) %>
               <p class="label-ready">Ready</p>
             <% else %>
-              <p class="label-not-ready">Not good</p>
+              <p class="label-not-ready">Not Ready</p>
             <% end %>
           </div>
         <% end %>
