@@ -30,9 +30,9 @@
             <div id="sortUndone" class="trip-list-group">
               <% @trip.trip_items.each do |trip_item| %>
                 <% if trip_item.done == false %>
-                  <div class="item jsitem" data-id-trip="<%= trip_item.id %>">
+                  <div class="item jsitem bg-<%= trip_item.item.category %>" data-id-trip="<%= trip_item.id %>">
                     <div class="item-icon">
-                      <%= image_tag('tshirt.png', width: 80) %>
+                      <%= image_tag("#{trip_item.item.icon}", width: 80) %>
                     </div>
                     <p><%= trip_item.item.name %> <span class="quantity">x<%= trip_item.quantity %></span></p>
                    <!--  <% if trip_item.done == false %>
