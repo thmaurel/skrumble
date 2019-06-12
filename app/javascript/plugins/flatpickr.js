@@ -2,6 +2,7 @@ import flatpickr from "flatpickr"
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
 import "flatpickr/dist/flatpickr.min.css" // Note this is important!
 
+require("flatpickr/dist/themes/confetti.css");
 const initFlatpickr = () => {
   const datepicker = document.querySelector(".datepicker");
   if (datepicker) {
