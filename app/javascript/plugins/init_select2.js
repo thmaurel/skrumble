@@ -7,7 +7,8 @@ const initSelect2 = () => {
   if (select) {
     $(".select2").select2({
       placeholder: "Select a country",
-      allowClear: true
+      allowClear: true,
+      width: '100%'
     });
   }
 };
