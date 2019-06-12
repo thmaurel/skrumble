@@ -34,14 +34,32 @@ end
 
 puts "Countries created"
 
-item = ["Pullovers", "Shorts", "Socks", "T-shirts", "Underwears", "Toilet bag"]
+item = ["Pullover", "Short", "Socks", "T-shirt", "Underwear", "Toilet bag"]
 
 item.each do |it|
   i = Item.new
   i.name = it
   i.ratio = 1
-  i.ratio = 0.3 if it == "Pullovers"
+  i.ratio = 0.3 if it == "Pullover"
   i.ratio = 0 if it == "Toilet bag"
+  if i.name == "Pullovers"
+    i.category = 1
+
+  elsif i.name == "Short"
+    i.icon = "shorts.png"
+    i.category = 2
+  elsif i.name == "Socks"
+    i.icon = "socks.png"
+    i.category = 3
+  elsif i.name == "T-shirt"
+    i.icon = "tshirt.png"
+    i.category = 4
+  elsif i.name == "Underwear"
+    i.icon = "underware.png"
+    i.category = 5
+  elsif i.name == "Toilet bag"
+    i.category = 6
+  end
   i.save
 end
 
