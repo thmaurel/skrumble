@@ -49,7 +49,10 @@
           <div id="sortUndone" class="todo-list-group">
             <% @trip.todos.each do |todo| %>
               <% if todo.done == false %>
-                <div class="item jstodo" data-id-todo="<%= todo.id %>">
+                <div class="item jstodo bg-<%= todo.task.category %>" data-id-todo="<%= todo.id %>">
+                  <div class="item-icon">
+                      <%= image_tag("#{todo.task.icon}", width: 80) %>
+                  </div>
                   <p><%= todo.task.name %></p>
                   <p><%= todo.task.description %></p>
                   <p><%= todo.task.process_time %></p>
