@@ -1,7 +1,7 @@
 .trip-banner {
   background-size: cover;
   background-position: center;
-  padding: 80px 0;
+  padding: 150px 0;
 }
 
 .trip-banner h1 {
@@ -9,7 +9,7 @@
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
-  font-weight: bold;
+  font-weight: regular;
 }
 
 .trip-banner h2 {
@@ -38,4 +38,8 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.skrumble-banner {
+  color: #F6AB3E;
 }
