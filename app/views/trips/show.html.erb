@@ -117,7 +117,7 @@
         <div class="event-desc justify-content-between align-items-center">
           <h3><%= trip_event.event.name %></h3>
           <p><em><%= trip_event.event.category %></em></p>
-          <p><strong><%= trip_event.event.start_date %></strong></p>
+          <p><strong><%= trip_event.event.start_date.strftime("%e %B %Y") %></strong></p>
           <p><%= trip_event.event.description %></p>
         </div>
       </div>
