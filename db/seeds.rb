@@ -48,13 +48,43 @@ end
 puts "Countries created"
 
 item = ["Pullover", "Short", "Socks", "T-shirt", "Underwear", "Toilet bag"]
-
+ctrytem = Country.find_by(name: "New Zealand")
 item.each do |it|
   i = Item.new
   i.name = it
   i.ratio = 1
   i.ratio = 0.3 if it == "Pullover"
   i.ratio = 0 if it == "Toilet bag"
+  i.country = ctrytem
+  if i.name == "Pullover"
+    i.icon = "hoodie.svg"
+    i.category = 1
+  elsif i.name == "Short"
+    i.icon = "shorts.svg"
+    i.category = 2
+  elsif i.name == "Socks"
+    i.icon = "socks.svg"
+    i.category = 3
+  elsif i.name == "T-shirt"
+    i.icon = "tshirt.svg"
+    i.category = 4
+  elsif i.name == "Underwear"
+    i.icon = "underwear.svg"
+    i.category = 5
+  elsif i.name == "Toilet bag"
+    i.icon = "toiletries.svg"
+    i.category = 6
+  end
+  i.save
+end
+ctrytem2 = Country.find_by(name: "Namibia")
+item.each do |it|
+  i = Item.new
+  i.name = it
+  i.ratio = 1
+  i.ratio = 0.3 if it == "Pullover"
+  i.ratio = 0 if it == "Toilet bag"
+  i.country = ctrytem2
   if i.name == "Pullover"
     i.icon = "hoodie.svg"
     i.category = 1
@@ -163,6 +193,8 @@ ta.save
 
 puts "Tasks created"
 
+ctryvent = Country.find_by(name: "New Zealand")
+
 e = Event.new
 e.name = "Scuba diving"
 e.category = "Watersport"
@@ -170,6 +202,7 @@ e.remote_photo_url = "https://nature-plongee.com/wp-content/uploads/voyage-plong
 e.description = "Be ready to experience the underwater adventure of a lifetime!"
 e.start_date = "Fri, 15 June 2019"
 e.end_date = "Fri, 15 June 2019"
+e.country = ctryvent
 e.save
 
 ev = Event.new
@@ -179,6 +212,7 @@ ev.remote_photo_url = "https://www.wedemain.fr/photo/art/grande/28623324-2812744
 ev.description = "Will you dare face the dense and wild forest?"
 ev.start_date = "Tue, 12 July 2019"
 ev.end_date = "Tue, 12 July 2019"
+ev.country = ctryvent
 ev.save
 
 eve = Event.new
@@ -188,6 +222,7 @@ eve.remote_photo_url = "https://images.unsplash.com/photo-1510007547711-41af7bcb
 eve.description = "Enjoy a meal like never before!"
 eve.start_date = "Thu, 20 August 2019"
 eve.end_date = "Thu, 20 August 2019"
+eve.country = ctryvent
 eve.save
 
 ev = Event.new
@@ -197,6 +232,7 @@ ev.remote_photo_url = "https://images.unsplash.com/photo-1489493585363-d69421e0e
 ev.description = "Try to picture a breathtaking sunset over and endless sea of sand..."
 ev.start_date = "Fri, 24 May 2019"
 ev.end_date = "Fri, 24 May 2019"
+ev.country = ctryvent
 ev.save
 
 ev = Event.new
@@ -206,6 +242,7 @@ ev.remote_photo_url = "https://images.unsplash.com/photo-1414437384035-787b9df78
 ev.description = "The water, the wind, the sun... What else?"
 ev.start_date = "Fri, 24 May 2019"
 ev.end_date = "Fri, 24 May 2019"
+ev.country = ctryvent
 ev.save
 
 puts "Events created"
