@@ -3,6 +3,7 @@ function refreshForm(innerHTML) {
   formContainer.innerHTML = innerHTML;
 }
 
+
 <% if @new_trip.errors.any? %>
   refreshForm('<%= j render 'shared/share_form', trip: @new_trip %>')
 <% else %>
