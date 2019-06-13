@@ -5,7 +5,15 @@
   <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= cl_image_path @trip.country.photo, crop: :fill %>);">
 <% end %>
     <div class="container">
+      <div class="d-flex justify-content-between">
       <h1>Let's <span class="skrumble-banner">Skrumble</span> your trip to <%= Country.find(@trip.country_id).name %> !</h1>
+      <% if @trip.accepted == nil %>
+      <div class="d-flex">
+       <%= link_to "Accept", trip_accept_path(@trip), :remote => true, id:"accept-btn" %>
+       <%= link_to "Decline", trip_decline_path(@trip), :remote => true, id:"decline-btn" %>
+       </div>
+      <% end %>
+     </div>
     </div>
   </div>
 

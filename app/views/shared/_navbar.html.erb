@@ -9,9 +9,38 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+
+
+  <div class="dropdown">
+    <i class="dropbtn fas fa-bell bell"></i>
+    <% count = 0 %>
+    <% current_user.trips.each do |l|%>
+      <% count += 1 if l.accepted == nil %>
+    <% end %>
+    <% unless count == 0 %>
+    <div class="notif-count d-flex justify-content-center align-items-center"><p><%= count %></p></div>
+    <% end %>
+
+    <div class="dropdown-content">
+      <% current_user.trips.each do |l|%>
+      <% if l.accepted == nil %>
+      <div class="content-notif d-flex align-items-center">
+         <%= cl_image_tag User.find(l.creator).photo, class: "avatar" %>
+         <p><span class="notif-bold"><%= User.find(l.creator).first_name %></span> invited you to <span class="notif-bold"><%= l.country.name %></span></p>
+         <%= link_to "", trip_path(l), class: "stretched-link" %>
+       </div>
+      <% end %>
+     <% end %>
+    </div>
+  </div>
+
+
       <li class="nav-item active">
         <%= link_to "DASHBOARD", dashboard_path, class: "nav-link skrtitle skrt" %>
       </li>
+
+
+
       <li class="nav-item dropdown">
         <% if current_user.facebook_picture_url != nil %>
           <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>

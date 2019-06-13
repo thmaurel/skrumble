@@ -20,4 +20,10 @@ class TripPolicy < ApplicationPolicy
   def share_create?
     true
   end
+  def accept?
+    true
+  end
+  def decline?
+    true
+  end
 end
