@@ -59,16 +59,16 @@ item.each do |it|
     i.icon = "hoodie.svg"
     i.category = 1
   elsif i.name == "Short"
-    i.icon = "shorts.png"
+    i.icon = "shorts.svg"
     i.category = 2
   elsif i.name == "Socks"
     i.icon = "socks.svg"
     i.category = 3
   elsif i.name == "T-shirt"
-    i.icon = "tshirt.png"
+    i.icon = "tshirt.svg"
     i.category = 4
   elsif i.name == "Underwear"
-    i.icon = "underwear.png"
+    i.icon = "underwear.svg"
     i.category = 5
   elsif i.name == "Toilet bag"
     i.icon = "toiletries.svg"
@@ -167,34 +167,45 @@ e = Event.new
 e.name = "Scuba diving"
 e.category = "Watersport"
 e.remote_photo_url = "https://nature-plongee.com/wp-content/uploads/voyage-plongee-saba-caraibes-m-j41.jpg"
-e.description = "Try new things, don't be a cheap bastard"
-e.start_date = "Fri, 24 May 2019"
-e.end_date = "Fri, 24 May 2019"
+e.description = "Be ready to experience the underwater adventure of a lifetime!"
+e.start_date = "Fri, 15 June 2019"
+e.end_date = "Fri, 15 June 2019"
 e.save
 
 ev = Event.new
 ev.name = "Forest walk"
 ev.category = "Outdoor activities"
 ev.remote_photo_url = "https://www.wedemain.fr/photo/art/grande/28623324-28127445.jpg?v=1544095128"
-ev.description = "Try new things, don't be a cheap bastard"
-ev.start_date = "Fri, 24 May 2019"
-ev.end_date = "Fri, 24 May 2019"
+ev.description = "Will you dare face the dense and wild forest?"
+ev.start_date = "Tue, 12 July 2019"
+ev.end_date = "Tue, 12 July 2019"
 ev.save
 
 eve = Event.new
-eve.name = "Barbecue"
+eve.name = "Lunch with a view"
 eve.category = "Food"
-eve.remote_photo_url = "https://previews.123rf.com/images/innocent/innocent1003/innocent100300039/11710255-gros-plan-d-un-barbecue-d-%C3%A9t%C3%A9-.jpg"
-eve.description = "Try new things, don't be a cheap bastard"
-eve.start_date = "Fri, 24 May 2019"
-eve.end_date = "Fri, 24 May 2019"
+eve.remote_photo_url = "https://images.unsplash.com/photo-1510007547711-41af7bcb4a03?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80"
+eve.description = "Enjoy a meal like never before!"
+eve.start_date = "Thu, 20 August 2019"
+eve.end_date = "Thu, 20 August 2019"
 eve.save
 
 ev = Event.new
 ev.name = "Walk in the desert"
 ev.category = "Outdoor activities"
 ev.remote_photo_url = "https://images.unsplash.com/photo-1489493585363-d69421e0edd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-ev.description = "Try new things, don't be a cheap bastard"
+ev.description = "Try to picture a breathtaking sunset over and endless sea of sand..."
 ev.start_date = "Fri, 24 May 2019"
 ev.end_date = "Fri, 24 May 2019"
 ev.save
+
+ev = Event.new
+ev.name = "Boat trip at sunset"
+ev.category = "Watersport"
+ev.remote_photo_url = "https://images.unsplash.com/photo-1414437384035-787b9df782d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1408&q=80"
+ev.description = "The water, the wind, the sun... What else?"
+ev.start_date = "Fri, 24 May 2019"
+ev.end_date = "Fri, 24 May 2019"
+ev.save
+
+puts "Events created"

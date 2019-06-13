@@ -112,10 +112,18 @@ const markAsComplete = (id) => {
 const autoScroll = () => {
   const essentials = document.querySelector('.trip-list-group');
   const importants = document.querySelector('.todo-list-group');
+  const tripList = document.querySelector('.trip-list');
+  const suitcaseDone = document.querySelector('#suitcase-done');
   if (essentials && importants) {
     if (essentials.children.length === 0 && importants.children.length === 0) {
       const scrollLink = document.querySelector("#scroll-link")
-      scrollLink.click()
+      scrollLink.click();
+      // vider les titres
+      tripList.style.display = "none";
+      // mettre en visible ma div suitcase
+      suitcaseDone.style.display = "initial";
+      // lui mettre la meme mise en forme que tripList
+      suitcaseDone.classList.add('skrumble-done');
     }
   }
 }
