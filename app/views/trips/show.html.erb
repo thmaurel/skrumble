@@ -5,7 +5,7 @@
   <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= cl_image_path @trip.country.photo, crop: :fill %>);">
 <% end %>
     <div class="container">
-      <h1>Let's <span class="skrumble-banner">Skrumble</span> your trip to <%= Country.find(@trip.country_id).name %> !</h1>
+      <h1>Let's Skrumble your trip to <span class="orange"><%= Country.find(@trip.country_id).name %></span> !</h1>
     </div>
   </div>
 
@@ -63,7 +63,6 @@
           </div> -->
           <div class="progression-bar">
             <div>
-              <!-- <h2><i class="far fa-check-circle"></i> Your suitcase</h2> -->
               <div id="sortDone" class="done-list-group <%= "flexbox-dropzone" if @trip.todos.where(done: true).empty? && @trip.trip_items.where(done: true).empty?  %> <%= "border-drop-zone" if @trip.todos.where(done: true).empty? && @trip.trip_items.where(done: true).empty?  %>">
                 <% if @trip.todos.where(done: true).empty? && @trip.trip_items.where(done: true).empty? %>
                   <div id="drag-item-text" style="vertical-align: middle">
@@ -109,15 +108,19 @@
           Share my trip !
       </button>
     </div>
-    <h2>Unique experiences <span class="blue">Skrumble</span> found for you in <span class="blue"><%= Country.find(@trip.country_id).name %>:</span></h2>
+    <h2>Unique <span class="blue">experiences</span> Skrumble found for you in <span class="blue"><%= Country.find(@trip.country_id).name %>:</span></h2>
     <div class="events mb-5">
       <% @trip.trip_events.each do |trip_event| %>
       <div class="card-event">
         <%= cl_image_tag trip_event.event.photo %>
         <div class="event-desc justify-content-between align-items-center">
-          <h3><%= trip_event.event.name %></h3>
-          <p><em><%= trip_event.event.category %></em></p>
-          <p><strong><%= trip_event.event.start_date.strftime("%e %B %Y") %></strong></p>
+          <div class="d-flex justify-content-between">
+            <h3><strong><%= trip_event.event.name %></strong></h3>
+            <p><span class="event-date"><%= trip_event.event.start_date.strftime("%e %B %Y") %></span></p>
+          </div>
+          <div class="event-category-box">
+            <p> <span class="event-category"><%= trip_event.event.category %></span></p>
+          </div>
           <p><%= trip_event.event.description %></p>
         </div>
       </div>
