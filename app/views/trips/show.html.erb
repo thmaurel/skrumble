@@ -24,6 +24,7 @@
     <div class="trip-show-flexbox">
       <div class="trip-list">
         <div>
+          <a data-easing="easeInOutQuint" id="scroll-link" data-scroll href="#bazinga" style="display:none">Anchor Link</a>
           <h2>The essentials</h2>
             <div id="sortUndone" class="trip-list-group">
               <% @trip.trip_items.each do |trip_item| %>
@@ -33,9 +34,6 @@
                       <%= image_tag("#{trip_item.item.icon}", width: 80) %>
                     </div>
                     <p><%= trip_item.item.name %> <span class="quantity">x<%= trip_item.quantity %></span></p>
-                   <!--  <% if trip_item.done == false %>
-                      <p class="status"><i class="far fa-thumbs-down"></i></p>
-                    <% end %> -->
                   </div>
                 <% end %>
               <% end %>
@@ -52,11 +50,6 @@
                       <%= image_tag("#{todo.task.icon}", width: 80) %>
                   </div>
                   <p><%= todo.task.name %></p>
-<!--                   <p><%= todo.task.description %></p>
-                  <p><%= todo.task.process_time %></p> -->
-              <!--     <% if todo.done == false %>
-                    <p class="status"><i class="far fa-thumbs-down"></i></p>
-                  <% end %> -->
                 </div>
               <% end %>
             <% end %>
@@ -71,7 +64,6 @@
           </div> -->
           <div class="progression-bar">
             <div>
-              <!-- <h2><i class="far fa-check-circle"></i> Your suitcase</h2> -->
               <div id="sortDone" class="done-list-group <%= "flexbox-dropzone" if @trip.todos.where(done: true).empty? && @trip.trip_items.where(done: true).empty?  %> <%= "border-drop-zone" if @trip.todos.where(done: true).empty? && @trip.trip_items.where(done: true).empty?  %>">
                 <% if @trip.todos.where(done: true).empty? && @trip.trip_items.where(done: true).empty? %>
                   <div id="drag-item-text" style="vertical-align: middle">
@@ -117,15 +109,19 @@
           Share my trip !
       </button>
     </div>
-    <h2>Unique experiences <span class="blue">Skrumble</span> found for you in <span class="blue"><%= Country.find(@trip.country_id).name %>:</span></h2>
+    <h2  id="bazinga">Unique <span class="blue">experiences</span> Skrumble found for you in <span class="blue"><%= Country.find(@trip.country_id).name %>:</span></h2>
     <div class="events mb-5">
       <% @trip.trip_events.each do |trip_event| %>
       <div class="card-event">
         <%= cl_image_tag trip_event.event.photo %>
         <div class="event-desc justify-content-between align-items-center">
-          <h3><%= trip_event.event.name %></h3>
-          <p><em><%= trip_event.event.category %></em></p>
-          <p><strong><%= trip_event.event.start_date.strftime("%e %B %Y") %></strong></p>
+          <div class="d-flex justify-content-between">
+            <h3><strong><%= trip_event.event.name %></strong></h3>
+            <p><span class="event-date"><%= trip_event.event.start_date.strftime("%e %B %Y") %></span></p>
+          </div>
+          <div class="event-category-box">
+            <p> <span class="event-category"><%= trip_event.event.category %></span></p>
+          </div>
           <p><%= trip_event.event.description %></p>
         </div>
       </div>

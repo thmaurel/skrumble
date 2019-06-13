@@ -8,9 +8,11 @@
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
     "select2": "^4.0.7",
+    "smooth-scroll": "^16.1.0",
     "sortablejs": "^1.9.0",
     "spin.js": "^4.0.0",
-    "sweetalert": "^2.1.2"
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^8.12.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.5.1"
