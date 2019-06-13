@@ -20,12 +20,14 @@ class Trip < ApplicationRecord
 
   def create_tripitems
     Item.all.each do |item|
-      t = TripItem.new
-      t.trip = self
-      t.item = item
-      t.quantity = (item.ratio * (self.end_date - self.start_date + 1)).to_i + 1
-      t.done = false
-      t.save
+      if item.country == self.country
+        t = TripItem.new
+        t.trip = self
+        t.item = item
+        t.quantity = (item.ratio * (self.end_date - self.start_date + 1)).to_i + 1
+        t.done = false
+        t.save
+      end
     end
   end
 
@@ -43,10 +45,12 @@ class Trip < ApplicationRecord
 
   def create_tripevents
     Event.all.each do |event|
-      e = TripEvent.new
-      e.trip = self
-      e.event = event
-      e.save
+      if event.country == self.country
+        e = TripEvent.new
+        e.trip = self
+        e.event = event
+        e.save
+      end
     end
   end
 
