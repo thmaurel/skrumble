@@ -72,8 +72,8 @@
                 <% end %>
                   <% @trip.todos.each do |todo| %>
                     <% if todo.done? %>
-                      <div class="item jsdone">
-                        <div class="item-icon">
+                      <div class="item jsdone ">
+                        <div class="item-icon bg-<%= todo.task.category %>">
                             <%= image_tag("#{todo.task.icon}", width: 80) %>
                         </div>
                         <p><%= todo.task.name %></p>
@@ -85,7 +85,7 @@
                   <% end %>
                   <% @trip.trip_items.each do |trip_item| %>
                     <% if trip_item.done? %>
-                      <div class="item jsdone">
+                      <div class="item jsdone bg-<%= trip_item.item.category %>">
                         <div class="item-icon">
                           <%= image_tag("#{trip_item.item.icon}", width: 80) %>
                         </div>

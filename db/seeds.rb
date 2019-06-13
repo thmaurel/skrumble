@@ -59,16 +59,16 @@ item.each do |it|
     i.icon = "hoodie.svg"
     i.category = 1
   elsif i.name == "Short"
-    i.icon = "shorts.png"
+    i.icon = "shorts.svg"
     i.category = 2
   elsif i.name == "Socks"
     i.icon = "socks.svg"
     i.category = 3
   elsif i.name == "T-shirt"
-    i.icon = "tshirt.png"
+    i.icon = "tshirt.svg"
     i.category = 4
   elsif i.name == "Underwear"
-    i.icon = "underwear.png"
+    i.icon = "underwear.svg"
     i.category = 5
   elsif i.name == "Toilet bag"
     i.icon = "toiletries.svg"
