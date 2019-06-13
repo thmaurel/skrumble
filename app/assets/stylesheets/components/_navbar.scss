@@ -2,7 +2,13 @@
   justify-content: space-between;
   background: $white;
 }
-
+.bell{
+  font-size: 20px;
+  width: 30px;
+  height:20px;
+  padding-top: 10px;
+  color:#7FA3E6;
+}
 #logo {
   display: flex;
   justify-content: space-around;
@@ -41,3 +47,73 @@ a:hover{
   margin-right: 7px;
   font-size: 14px!important;
 }
+
+.content-notif {
+  position: relative;
+  padding: 5px;
+  border-bottom: 1px solid rgba(55,109,215,0.1);
+
+  .notif-bold {
+    font-weight: bold;
+  }
+
+  p {
+    padding: 0px;
+    padding-left: 3px;
+    margin: 0px;
+  }
+}
+
+.notif-count {
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  font-size: 10px;
+  width: 15px;
+  height: 15px;
+  color: white;
+  p {
+    margin: 0px;
+  }
+}
+
+.content-notif:hover {background-color: rgba(55,109,215,0.1);}
+
+.dropbtn {
+  font-size: 20px;
+  width: 30px;
+  height:20px;
+  padding-top: 10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  right: -50px;
+  width: 300px;
+  display: none;
+  position: relative;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin: 0px!important;
+  padding: 0px !important;
+}
+
+.dropdown-content-commented a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+

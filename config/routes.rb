@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :trips, only: [:show] do
     get :share_new, on: :member
     post :share_create, on: :member
+    get 'accept', to: "trips#accept"
+    get 'decline', to: "trips#decline"
   end
 
   resources :events, only: [:show]
