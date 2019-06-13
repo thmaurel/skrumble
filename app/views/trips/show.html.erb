@@ -6,7 +6,7 @@
 <% end %>
     <div class="container">
       <div class="d-flex justify-content-between">
-      <h1>Let's <span class="skrumble-banner">Skrumble</span> your trip to <%= Country.find(@trip.country_id).name %> !</h1>
+      <h1>Let's Skrumble your trip to <span class="orange"><%= Country.find(@trip.country_id).name %> !</span></h1>
       <% if @trip.accepted == nil %>
       <div class="d-flex">
        <%= link_to "Accept", trip_accept_path(@trip), :remote => true, id:"accept-btn" %>
