@@ -5,13 +5,15 @@
   <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= cl_image_path @trip.country.photo, crop: :fill %>);">
 <% end %>
     <div class="container">
-      <div class="d-flex justify-content-between">
-      <h1>Let's prepare your trip to <span class="orange"><%= Country.find(@trip.country_id).name %> !</span></h1>
+      <div class="d-flex ">
       <% if @trip.accepted == nil %>
-      <div class="d-flex">
-       <%= link_to "Accept", trip_accept_path(@trip), :remote => true, id:"accept-btn" %>
-       <%= link_to "Decline", trip_decline_path(@trip), :remote => true, id:"decline-btn" %>
-       </div>
+        <h1 id= "invit-title"><%= User.find(@trip.creator).first_name %> invited you to <%= @trip.country.name %>!</h1>
+        <div class="d-flex">
+          <%= link_to "Accept", trip_accept_path(@trip), :remote => true, id:"accept-btn", class: "btn bout" %>
+          <%= link_to "Decline", trip_decline_path(@trip), id:"decline-btn", class: "btn bout3" %>
+        </div>
+      <% else %>
+        <h1>Let's <span class="skrumble-banner">Skrumble</span> your trip to <%= Country.find(@trip.country_id).name %> !</h1>
       <% end %>
      </div>
     </div>
@@ -113,14 +115,16 @@
         </div>
       </div>
     </div>
+
     <div class="go-skrumble-bar">
       <div class="text-align-left">
-        <h2></h2>
+   <h4>Share your trip with your friends!</h4>
       </div>
-      <button type="button" class="btn btn-outline-warning share-trip-modal" data-toggle="modal" data-target="#share-trip-modal">
+      <button type="button" class="btn share-button share-trip-modal" data-toggle="modal" data-target="#share-trip-modal">
           Share my trip !
       </button>
     </div>
+
     <h2  id="bazinga">Unique <span class="blue">experiences</span> Skrumble found for you in <span class="blue"><%= Country.find(@trip.country_id).name %>:</span></h2>
     <div class="events mb-5">
       <% @trip.trip_events.each do |trip_event| %>

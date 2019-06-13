@@ -66,10 +66,7 @@ class TripsController < ApplicationController
     @trip.accepted = false
     authorize @trip
     @trip.save
-    respond_to do |format|
-      format.html { redirect_to dashboard_path }
-      format.js
-    end
+    redirect_to dashboard_path
   end
   private
 
