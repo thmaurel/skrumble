@@ -12,6 +12,10 @@ class Trip < ApplicationRecord
   after_create :create_todos
   after_create :create_tripevents
 
+  def is_done?
+    trip_items.count == trip_items.where(done: true).count
+  end
+
   private
 
   def create_tripitems
@@ -45,4 +49,5 @@ class Trip < ApplicationRecord
       e.save
     end
   end
+
 end
