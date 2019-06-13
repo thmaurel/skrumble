@@ -16,6 +16,7 @@ const initSortable = () => {
         if (event.to === document.querySelector('.done-list-group')) {
           let tripItemId = event.item.dataset.idTrip;
           markAsDone(tripItemId);
+          autoScroll();
         }
       },
     });
@@ -31,6 +32,7 @@ const initSortable = () => {
         if (event.to === document.querySelector('.done-list-group')) {
           let todoId = event.item.dataset.idTodo;
           markAsComplete(todoId);
+          autoScroll();
         }
       },
     });
@@ -71,7 +73,6 @@ const markAsDone = (id) => {
     }
     let itemsIcons = document.querySelector(`.jsitem[data-id-trip='${id}']`);
     if (itemsIcons) {
-      console.log(itemsIcons);
       itemsIcons.classList.remove(`jsitem`);
       itemsIcons.classList.add(`jsdone`);
     }
@@ -91,7 +92,9 @@ const markAsComplete = (id) => {
     let jsDoneList = document.querySelector(`.done-list-group`);
     jsDoneList.style.borderColor = "white";
     let jsDragItemText = document.querySelector('#drag-item-text');
-    jsDragItemText.innerHTML = "";
+    if (jsDragItemText) {
+      jsDragItemText.innerHTML = "";
+    }
     let jsDropZone = document.querySelector(`#sortDone`);
     jsDropZone.classList.remove(`flexbox-dropzone`);
     let borderDropZone = document.querySelector('.border-drop-zone');
@@ -100,11 +103,21 @@ const markAsComplete = (id) => {
     }
     let itemsIcons = document.querySelector(`.jstodo[data-id-todo='${id}']`);
     if (itemsIcons) {
-      console.log(itemsIcons);
       itemsIcons.classList.remove(`jstodo`);
       itemsIcons.classList.add(`jsdone`);
     }
   });
+}
+
+const autoScroll = () => {
+  const essentials = document.querySelector('.trip-list-group');
+  const importants = document.querySelector('.todo-list-group');
+  if (essentials && importants) {
+    if (essentials.children.length === 0 && importants.children.length === 0) {
+      const scrollLink = document.querySelector("#scroll-link")
+      scrollLink.click()
+    }
+  }
 }
 
 export { initSortable };

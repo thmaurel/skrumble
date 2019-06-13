@@ -6,6 +6,7 @@ import initSelect2 from '../plugins/init_select2';
 import initCollapsible from "../plugins/init_collapsible";
 import swal from 'sweetalert';
 import initSpin from "../plugins/spin";
+import initSmoothScroll from '../plugins/init_smooth_scroll'
 
 
 initSortable();
@@ -13,4 +14,4 @@ initFlatpickr();
 initSelect2();
 initSpin();
 initCollapsible();
-
+initSmoothScroll();
