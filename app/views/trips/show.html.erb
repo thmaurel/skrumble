@@ -13,7 +13,7 @@
           <%= link_to "Decline", trip_decline_path(@trip), id:"decline-btn", class: "btn bout3" %>
         </div>
       <% else %>
-        <h1>Let's Skrumble your trip to <span class="orange"><%= Country.find(@trip.country_id).name %> !</span></h1>
+        <h1>Let's prepare your trip to <span class="orange"><%= Country.find(@trip.country_id).name %> !</span></h1>
       <% end %>
      </div>
     </div>
