@@ -1,7 +1,6 @@
 .trip-show-flexbox {
   display: flex;
   padding-top: 30px;
-  margin-bottom: 40px;
 
   .trip-list {
     background-color: white;
@@ -197,10 +196,43 @@
 }
 
 .go-skrumble-bar {
+  padding: 10px;
+  margin-bottom:20px;
+  background-color:white;
   display: flex;
+  align-items:center;
   justify-content: space-between;
+  padding: 20px 40px;
+  border-radius: 5px;
+  h4{
+    margin:0px;
+    margin-right:10px;
+  }
 }
-
+.share-button{
+  margin-left: -5px;
+  color: $my-light-blue;
+  background-color: white; /* Green */
+  border: 1px solid $my-light-blue;
+  height: 38px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.share-button:hover{
+  margin-left: -5px;
+  color: white;
+  background-color: $my-light-blue; /* Green */
+   border: 1px solid white;
+  height: 38px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+}
 .suitcase {
   text-align: center;
 }
