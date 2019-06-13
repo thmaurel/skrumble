@@ -7,7 +7,7 @@
     <div class="container">
       <div class="d-flex ">
       <% if @trip.accepted == nil %>
-        <h1 id= "invit-title"><%= User.find(@trip.creator).first_name %> invited you to <%= @trip.country.name %>!</h1>
+        <h1 id= "invit-title"><%= User.find(@trip.creator).first_name %> invited you to <span class="orange"><%= @trip.country.name %>!</span></h1>
         <div class="d-flex">
           <%= link_to "Accept", trip_accept_path(@trip), :remote => true, id:"accept-btn", class: "btn bout" %>
           <%= link_to "Decline", trip_decline_path(@trip), id:"decline-btn", class: "btn bout3" %>
