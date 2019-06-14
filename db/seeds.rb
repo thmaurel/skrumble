@@ -443,4 +443,36 @@ ev.end_date = "Fri, 24 May 2019"
 ev.country = ctryvent3
 ev.save
 
+ctryvent3 = Country.find_by(name: "North Korea")
+
+ev = Event.new
+ev.name = "Run a mararthon in Pyongyang"
+ev.category = "Outdoor activities"
+ev.remote_photo_url = "http://s1.lprs1.fr/images/2017/04/09/6838707_4770a0e3aeb76ee2a4c2e9809340e4b280328b1a_1000x625.jpg"
+ev.description = "The best way to discover the city and its people"
+ev.start_date = "Tue, 12 July 2019"
+ev.end_date = "Tue, 12 July 2019"
+ev.country = ctryvent3
+ev.save
+
+ev = Event.new
+ev.name = "One Night in Ryugyong Hotel"
+ev.category = "Leisure"
+ev.remote_photo_url = "https://www.bfmtv.com/i/0/0/6d2/47a294d1eaf03fbaa2e91699e60e7.jpeg"
+ev.description = "Experience the only 5-star hotel in North Korea!"
+ev.start_date = "Fri, 24 May 2019"
+ev.end_date = "Fri, 24 May 2019"
+ev.country = ctryvent3
+ev.save
+
+ev = Event.new
+ev.name = "Mangyongdae Funfair"
+ev.category = "Fun"
+ev.remote_photo_url = "https://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvcGxhY2VfaW1hZ2VzLzZiMWJlOGI5ZDRhMzM1YTQ5ZGRhZGQzNTdiNTFmNjJiUGFyazEuanBnIl0sWyJwIiwiY29udmVydCIsIi1hdXRvLW9yaWVudCAiXSxbInAiLCJ0aHVtYiIsIjExNjZ4Nzc3KzQzNCswIl0sWyJwIiwiY29udmVydCIsIi1xdWFsaXR5IDgxIC1hdXRvLW9yaWVudCJdLFsicCIsInRodW1iIiwiNzgweDUyMCMiXV0/Park1.jpg"
+ev.description = "This abandoned-looking amusement park is frighteningly open for business."
+ev.start_date = "Fri, 24 May 2019"
+ev.end_date = "Fri, 24 May 2019"
+ev.country = ctryvent3
+ev.save
+
 puts "Events created"
