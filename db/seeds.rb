@@ -77,6 +77,37 @@ item.each do |it|
   end
   i.save
 end
+
+item2 = ["Pullover", "Pants", "Socks", "T-shirt", "Underwear", "Toilet bag"]
+
+ctrytems = Country.find_by(name: "Canada")
+item2.each do |it|
+  i = Item.new
+  i.name = it
+  i.ratio = 1
+  i.country = ctrytems
+  if i.name == "Pullover"
+    i.icon = "hoodie.svg"
+    i.category = 1
+  elsif i.name == "Pants"
+    i.icon = "pants.svg"
+    i.category = 2
+  elsif i.name == "Socks"
+    i.icon = "socks.svg"
+    i.category = 3
+  elsif i.name == "T-shirt"
+    i.icon = "tshirt.svg"
+    i.category = 4
+  elsif i.name == "Underwear"
+    i.icon = "underwear.svg"
+    i.category = 5
+  elsif i.name == "Toilet bag"
+    i.icon = "toiletries.svg"
+    i.category = 6
+  end
+  i.save
+end
+
 ctrytem2 = Country.find_by(name: "Namibia")
 item.each do |it|
   i = Item.new
@@ -131,7 +162,7 @@ ta.category = 5
 ta.country = taco
 ta.save
 
-taco = Country.find_by(name: "Indonesia")
+taco = Country.find_by(name: "Canada")
 ta = Task.new
 ta.name = "Passport"
 ta.country = taco
@@ -143,12 +174,6 @@ ta.name = "Visa"
 ta.country = taco
 ta.category = 2
 ta.icon = "visa.svg"
-ta.save
-ta = Task.new
-ta.name = "Rabies"
-ta.icon = "vaccin.svg"
-ta.category = 5
-ta.country = taco
 ta.save
 
 taco = Country.find_by(name: "New Zealand")
