@@ -13,7 +13,7 @@ class Trip < ApplicationRecord
   after_create :create_tripevents
 
   def is_done?
-    trip_items.count == trip_items.where(done: true).count
+    trip_items.count == trip_items.where(done: true).count && todos.count == todos.where(done: true).count
   end
 
   private
