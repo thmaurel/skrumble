@@ -342,7 +342,7 @@ ev.save
 ev = Event.new
 ev.name = "New Zealand Winery"
 ev.category = "Food"
-ev.remote_photo_url = "https://lelongweekend.com/wp-content/uploads/2018/04/new-zealand-3018634_1920-1024x669.jpg"
+ev.remote_photo_url = "https://images.unsplash.com/photo-1552712095-7bf5c609a1be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
 ev.description = "Waiheke Island is a popular day trip from Auckland City!"
 ev.start_date = "Fri, 24 May 2019"
 ev.end_date = "Fri, 24 May 2019"
@@ -362,7 +362,7 @@ ev.country = ctryvent2
 ev.save
 
 e = Event.new
-e.name = "Safari in Etosha National Park"
+e.name = "Safari"
 e.category = "Outdoor activities"
 e.remote_photo_url = "https://images.unsplash.com/photo-1544219110-079476d43889?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1062&q=80"
 e.description = "Etosha National Park is probably my number 1 thing to do in Namibia!"
@@ -392,7 +392,7 @@ e.country = ctryvent2
 e.save
 
 e = Event.new
-e.name = "DEADVLEI & SOSSUSVLEI"
+e.name = "Sossuvlei"
 e.category = "Outdoor activities"
 e.remote_photo_url = "https://images.unsplash.com/photo-1551176601-c55f81516ba9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1089&q=80"
 e.description = "One of Namibia’s most iconic sights is the unique dead trees surrounded by red sand dunes!"
