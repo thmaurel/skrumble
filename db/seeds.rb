@@ -25,6 +25,7 @@ u.first_name = "Emeric"
 u.last_name = "Le Bail"
 #u.username = "Bob"
 u.email = "emeric@gmail.com"
+u.remote_photo_url = "https://kitt.lewagon.com/placeholder/users/elebail"
 u.password = "abc123"
 u.password_confirmation = "abc123"
 u.save
