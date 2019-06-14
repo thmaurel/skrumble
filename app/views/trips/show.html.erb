@@ -131,14 +131,13 @@
       <div class="card-event">
         <%= cl_image_tag trip_event.event.photo %>
         <div class="event-desc justify-content-between align-items-center">
-          <div class="d-flex justify-content-between">
+          <div class="event-title d-flex justify-content-between">
             <h3><strong><%= trip_event.event.name %></strong></h3>
-            <p><span class="event-date"><%= trip_event.event.start_date.strftime("%e %B %Y") %></span></p>
-          </div>
-          <div class="event-category-box">
             <p> <span class="event-category"><%= trip_event.event.category %></span></p>
           </div>
-          <p><%= trip_event.event.description %></p>
+          <div class="event-category-box">
+          </div>
+          <p><%= trip_event.event.description%></p>
         </div>
       </div>
       <% end %>
