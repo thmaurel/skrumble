@@ -28,6 +28,13 @@
   color: $light-gray;
 }
 
+@media(max-width: 624px) {
+  .new-trip-form {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .datepicker {
   width: 160px;
   background-color:#CED4DA;
