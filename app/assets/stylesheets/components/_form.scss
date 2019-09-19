@@ -143,10 +143,6 @@ margin-right:57px;
     background-color: #E9ECEF !important;
 }
 
-.country-input {
-  margin-left: 20px;
-}
-
 @media(max-width: 624px) {
   .new-trip-form {
     flex-direction: column;
@@ -156,7 +152,7 @@ margin-right:57px;
     }
   }
   .select {
-    width: 134px !important;
+    width: 114px !important;
     offset: 20px !important;
   }
 }
